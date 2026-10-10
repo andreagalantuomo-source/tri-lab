@@ -1,0 +1,8 @@
+{
+  "appclips": { "apps": ["TGBZF8FU5L.it.3-lab.card.Clip"] },
+  "applinks": {
+    "details": [
+      { "appIDs": ["TGBZF8FU5L.it.3-lab.card"], "components": [ { "/": "/card/*" }, { "/": "/c/*" } ] }
+    ]
+  }
+}

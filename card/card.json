@@ -1,0 +1,13 @@
+{
+  "nome": "3-LAB",
+  "tagline": "Ingegneria · Economia · AI Agentica",
+  "descrizione": "Il partner d'innovazione per le PMI: rigore economico, ottimizzazione ingegneristica e intelligenza artificiale.",
+  "etichette": ["Business", "Operation", "Creative"],
+  "colori": { "accento": "#19E67C", "accentoScuro": "#0aa859", "titolo": "#2b2d51", "sfondo": "#0c0e0d" },
+  "logo": "logo.png",
+  "azioni": [
+    { "tipo": "contatto", "titolo": "Salva contatto", "valore": "3-lab.vcf" },
+    { "tipo": "whatsapp", "titolo": "WhatsApp", "valore": "393791801764" },
+    { "tipo": "email", "titolo": "Scrivici", "valore": "info@3-lab.it" }
+  ]
+}
