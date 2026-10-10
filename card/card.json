@@ -2,19 +2,19 @@
   "nome": "3-LAB",
   "tagline": "Ingegneria · Economia · AI Agentica",
   "descrizione": "Il partner d'innovazione per le PMI: rigore economico, ottimizzazione ingegneristica e intelligenza artificiale.",
-  "etichette": [
-    "Business",
-    "Operation",
-    "Creative"
-  ],
+  "etichette": [],
   "colori": {
     "accento": "#19E67C",
     "accentoScuro": "#0aa859",
-    "titolo": "#2b2d51",
+    "titolo": "#000000",
     "sfondo": "#0c0e0d"
   },
   "logo": "logo.png",
   "social": [
+    {
+      "tipo": "linkedin",
+      "valore": "https://www.linkedin.com/company/3-lab/about/"
+    },
     {
       "tipo": "whatsapp",
       "valore": "https://wa.me/393791801764"
@@ -22,21 +22,17 @@
     {
       "tipo": "instagram",
       "valore": "https://www.instagram.com/3lab.it"
-    },
-    {
-      "tipo": "linkedin",
-      "valore": "https://www.linkedin.com/company/3-lab/about/"
     }
   ],
   "recensione": "https://g.page/r/CROQUjLiNfmkEBM/review",
   "persone": [
     {
-      "nome": "Vincenzo Musone",
-      "foto": "team/vincenzo.jpg"
-    },
-    {
       "nome": "Andrea Galantuomo",
       "foto": "team/andrea.jpg"
+    },
+    {
+      "nome": "Vincenzo Musone",
+      "foto": "team/vincenzo.jpg"
     },
     {
       "nome": "Domenico Maietta",

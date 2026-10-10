@@ -16,45 +16,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>:root{--ink:#000;--paper:#fff;--canvas:#e6e6e6;--slate:#444;--smoke:#8f8f8f;--volt:#19E67C;--volt-deep:#0aa859;--navy:#2b2d51}
 *{box-sizing:border-box;margin:0}
-body{min-height:100svh;display:grid;place-items:center;padding:16px;background-color:#0c0e0d;background-image:radial-gradient(60% 45% at 50% 30%,rgba(25,230,124,.22),transparent 70%),radial-gradient(45% 35% at 85% 90%,rgba(255,59,48,.16),transparent 70%),radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:auto,auto,26px 26px;background-attachment:fixed;color:var(--ink);font:16px/1.5 'Inter',system-ui,sans-serif}
-.card{width:100%;max-width:400px;background:var(--paper);border-radius:28px;padding:24px 20px 18px;border:2px solid var(--volt);box-shadow:0 0 0 4px rgba(25,230,124,.18),0 0 40px rgba(25,230,124,.45)}
+html{height:100%;overflow:hidden}
+body{height:100svh;overflow:hidden;display:grid;place-items:center;padding:max(10px,env(safe-area-inset-top)) 12px max(10px,env(safe-area-inset-bottom));background-color:#0c0e0d;background-image:radial-gradient(60% 45% at 50% 30%,rgba(25,230,124,.22),transparent 70%),radial-gradient(45% 35% at 85% 90%,rgba(255,59,48,.16),transparent 70%),radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:auto,auto,26px 26px;background-attachment:fixed;color:var(--ink);font:16px/1.5 'Inter',system-ui,sans-serif}
+.card{width:100%;max-width:400px;max-height:100%;display:flex;flex-direction:column;justify-content:space-between;background:var(--paper);border-radius:28px;padding:clamp(12px,2.6svh,24px) 20px clamp(10px,2svh,18px);border:2px solid var(--volt);box-shadow:0 0 0 4px rgba(25,230,124,.18),0 0 40px rgba(25,230,124,.45)}
 .top{display:flex;align-items:center;justify-content:space-between}
-.mark{width:64px;height:auto;display:block}
-h1{font:400 56px/.9 'Anton',sans-serif;letter-spacing:-.02em;text-transform:uppercase;margin-top:14px;color:var(--navy)}
-.tag{font:500 11px/1.4 'JetBrains Mono',monospace;text-transform:uppercase;color:var(--slate);margin-top:10px}
+.mark{width:clamp(44px,7svh,64px);height:auto;display:block}
+h1{font:400 clamp(36px,6.5svh,56px)/.9 'Anton',sans-serif;letter-spacing:-.02em;text-transform:uppercase;margin-top:clamp(6px,1.6svh,14px);color:var(--ink)}
+h1 i{font-style:normal;color:var(--volt)}
+.tag{font:500 11px/1.4 'JetBrains Mono',monospace;text-transform:uppercase;color:var(--slate);margin-top:clamp(4px,1.1svh,10px)}
 .lead{color:var(--slate);margin-top:8px;font-size:14px;line-height:1.45}
-.hubs{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.linee{font:500 11px 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin-top:20px}
-.hubs span{font:500 11px 'JetBrains Mono',monospace;padding:6px 9px;border-radius:999px;background:var(--canvas)}
-.actions{display:grid;gap:8px;margin-top:18px}
-.btn{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-radius:16px;text-decoration:none;font-weight:600;color:var(--ink);background:var(--canvas)}
+.actions{display:grid;gap:clamp(5px,1svh,8px);margin-top:clamp(8px,2svh,18px)}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:clamp(9px,1.7svh,14px) 18px;border-radius:16px;text-decoration:none;font-weight:600;color:var(--ink);background:var(--canvas)}
 .btn small{font:400 13px 'Inter',sans-serif;color:var(--slate)}
 .rev{display:flex;align-items:center;gap:10px}
 .rev .g{width:20px;height:20px}
-.btn.main{background:var(--ink);color:var(--paper);padding:20px 22px;font-size:19px;border-radius:20px}
+.btn.main{background:var(--ink);color:var(--paper);padding:clamp(12px,2.4svh,20px) 22px;font-size:19px;border-radius:20px}
 .btn.main::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--volt)}
-.social{display:flex;gap:14px;justify-content:center;margin-top:4px}
-.social a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center}
+.social{display:flex;gap:28px;justify-content:center;margin-top:10px;margin-bottom:6px}
+.social a{width:clamp(48px,7svh,60px);height:clamp(48px,7svh,60px);border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid currentColor}
 .social svg{width:34px;height:34px}
-.soci{display:flex;gap:10px;justify-content:space-between;margin-top:18px}
+.soci{display:flex;gap:10px;justify-content:space-between;margin-top:clamp(8px,2svh,18px)}
 .soci div{flex:1;text-align:center}
-.soci img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--volt);display:block;margin:0 auto}
+.soci div:nth-child(1){--c:#000}.soci div:nth-child(2){--c:var(--volt)}.soci div:nth-child(3){--c:#ff3b30}
+.soci img{width:clamp(56px,10svh,84px);height:clamp(56px,10svh,84px);border-radius:50%;object-fit:cover;border:3px solid var(--c);display:block;margin:0 auto}
 .soci b{display:block;font-size:13px;line-height:1.25;margin-top:8px}
+@media (max-height:700px){.lead{display:none}}
+@media (max-height:600px){.tag{display:none}.btn small{display:none}}
 .btn:focus-visible,.social a:focus-visible{outline:3px solid var(--volt-deep);outline-offset:2px}
-.site{display:block;text-align:center;margin-top:16px;font-weight:600;color:var(--volt-deep);text-decoration:none}
+.site{display:block;text-align:center;margin-top:clamp(8px,1.8svh,16px);font-weight:600;color:var(--volt-deep);text-decoration:none}
 footer{font:400 11px 'JetBrains Mono',monospace;color:var(--smoke);text-align:center;margin-top:10px;letter-spacing:.04em}</style></head>
 <body><main class="card">
 <div class="top"><img class="mark" src="/logo.svg" alt="Logo 3-LAB" width="64" height="48"></div>
-<h1>3-LAB</h1><p class="tag">Ingegneria · Economia · AI Agentica</p><p class="lead">Il partner d&#x27;innovazione per le PMI: rigore economico, ottimizzazione ingegneristica e intelligenza artificiale.</p>
+<h1>3<i>-</i>LAB</h1><p class="tag">Ingegneria · Economia · AI Agentica</p><p class="lead">Il partner d&#x27;innovazione per le PMI: rigore economico, ottimizzazione ingegneristica e intelligenza artificiale.</p>
 <nav class="actions">
 <a class="btn main" href="contatto.vcf" download="3-LAB.vcf">Salva contatto</a>
-<div class="social"><a href="https://wa.me/393791801764" aria-label="WhatsApp" style="background:#25D366"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.2 18.8z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2.1-1-.9.8c-1-.4-2-1.4-2.4-2.4l.8-.9-1-2.1z" fill="#fff"/></svg></a><a href="https://www.instagram.com/3lab.it" aria-label="Instagram" style="background:linear-gradient(45deg,#f9a03c,#e1306c 55%,#833ab4)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.500" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="3.600" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17" cy="7" r="1.200" fill="#fff"/></svg></a><a href="https://www.linkedin.com/company/3-lab/about/" aria-label="LinkedIn" style="background:#0A66C2"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9.5" width="3.4" height="10" fill="#fff"/><circle cx="5.7" cy="5.8" r="2" fill="#fff"/><path d="M10 9.5h3.2v1.5c.6-1.1 1.8-1.8 3.4-1.8 3 0 3.7 2 3.7 4.600V19.500h-3.400v-5.200c0-1.300-.3-2.200-1.600-2.200s-2 .9-2 2.300v5.100H10z" fill="#fff"/></svg></a></div>
+<div class="social"><a href="https://www.linkedin.com/company/3-lab/about/" aria-label="LinkedIn" style="color:#000"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9.5" width="3.4" height="10" fill="currentColor"/><circle cx="5.7" cy="5.8" r="2" fill="currentColor"/><path d="M10 9.5h3.2v1.5c.6-1.1 1.8-1.8 3.4-1.8 3 0 3.7 2 3.7 4.600V19.500h-3.400v-5.200c0-1.300-.3-2.200-1.600-2.200s-2 .9-2 2.300v5.100H10z" fill="currentColor"/></svg></a><a href="https://wa.me/393791801764" aria-label="WhatsApp" style="color:#19E67C"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.2 18.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2.1-1-.9.8c-1-.4-2-1.4-2.4-2.4l.8-.9-1-2.1z" fill="currentColor"/></svg></a><a href="https://www.instagram.com/3lab.it" aria-label="Instagram" style="color:#ff3b30"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.500" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.600" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.200" fill="currentColor"/></svg></a></div>
 <a class="btn" href="https://g.page/r/CROQUjLiNfmkEBM/review"><span class="rev"><svg class="g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Lascia una recensione</span><small>★★★★★</small></a>
 <a class="btn" href="mailto:info@3-lab.it">Scrivici <small>info@3-lab.it</small></a>
 </nav>
-<div class="soci"><div><img src="team/vincenzo.jpg" alt="Vincenzo Musone" width="84" height="84"><b>Vincenzo<br>Musone</b></div><div><img src="team/andrea.jpg" alt="Andrea Galantuomo" width="84" height="84"><b>Andrea<br>Galantuomo</b></div><div><img src="team/domenico.jpg" alt="Domenico Maietta" width="84" height="84"><b>Domenico<br>Maietta</b></div></div>
-<p class="linee">Le nostre linee</p>
-<div class="hubs"><span>Business</span><span>Operation</span><span>Creative</span></div>
+<div class="soci"><div><img src="team/andrea.jpg" alt="Andrea Galantuomo" width="84" height="84"><b>Andrea<br>Galantuomo</b></div><div><img src="team/vincenzo.jpg" alt="Vincenzo Musone" width="84" height="84"><b>Vincenzo<br>Musone</b></div><div><img src="team/domenico.jpg" alt="Domenico Maietta" width="84" height="84"><b>Domenico<br>Maietta</b></div></div>
 <a class="site" href="https://3-lab.it">3-lab.it</a>
 <footer>3-LAB · Marcianise (CE)</footer>
 </main></body></html>
