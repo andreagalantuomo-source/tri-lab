@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /_riuso/
 
 Sitemap: https://3-lab.it/sitemap.xml

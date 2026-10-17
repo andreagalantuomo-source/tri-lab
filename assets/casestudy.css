@@ -1,0 +1,44 @@
+/* Case study: stage con anteprima (browser frame / flusso animato) + testo. Usato in home e in /case-study */
+.cs-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.cs-tab{font:600 14px/1 var(--f-sans,Inter,sans-serif);padding:12px 18px;border-radius:100px;border:1.5px solid #dcdcdc;background:#fff;color:#111;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.cs-tab:hover{border-color:#0aa859}
+.cs-tab[aria-selected="true"]{background:#111;border-color:#111;color:#fff}
+.cs-stage{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.cs-stage[hidden]{display:none}
+.cs-list .cs-stage{margin-bottom:clamp(48px,7vw,88px)}
+.cs-list .cs-stage:nth-child(even){grid-template-columns:1fr 1.4fr}
+.cs-list .cs-stage:nth-child(even) .cs-vis{order:2}
+.cs-frame{position:relative;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #e3e3e3;box-shadow:0 40px 70px -48px rgba(0,0,0,.45);aspect-ratio:16/10}
+.cs-bar{position:absolute;z-index:2;left:0;right:0;top:0;height:34px;display:flex;align-items:center;gap:6px;padding:0 14px;background:rgba(255,255,255,.94);border-bottom:1px solid #ececec;font:11px/1 var(--f-mono,monospace);letter-spacing:.05em;text-transform:uppercase;color:#555}
+.cs-bar i{width:9px;height:9px;border-radius:50%;background:#d9d9d9}
+.cs-bar i:first-child{background:#19E67C}
+.cs-bar span{margin-left:8px}
+.cs-frame video{position:absolute;inset:34px 0 0;width:100%;height:calc(100% - 34px);object-fit:cover;object-position:top}
+.cs-frame img{position:absolute;inset:34px 0 0;width:100%;height:calc(100% - 34px);object-fit:cover;object-position:top}
+.cs-skel{position:absolute;inset:34px 0 0;padding:22px;display:grid;gap:14px;grid-template-rows:auto 1fr auto;background:linear-gradient(160deg,#f6f6f6,#fff)}
+.cs-skel b{display:block;height:12px;border-radius:6px;background:#e4e4e4;width:38%}
+.cs-skel .hero{border-radius:12px;background:linear-gradient(120deg,#e9f9f0,#e6e6e6);position:relative;overflow:hidden}
+.cs-skel .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.7) 50%,transparent 70%);transform:translateX(-100%);animation:csShim 3.2s ease-in-out infinite}
+.cs-skel .row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cs-skel .row i{height:46px;border-radius:10px;background:#ececec}
+@keyframes csShim{to{transform:translateX(100%)}}
+.cs-flow{border-radius:18px;border:1px solid #e3e3e3;background:#fafafa radial-gradient(#d4d4d4 1px,transparent 1px) 0 0/22px 22px;padding:10px;box-shadow:0 40px 70px -48px rgba(0,0,0,.45)}
+.cs-flow svg{display:block;width:100%;height:auto}
+.cs-flow .n rect{fill:#fff;stroke:#d6d6d6;stroke-width:1.5}
+.cs-flow .n .t{font:700 15px var(--f-sans,Inter,sans-serif);fill:#111}
+.cs-flow .n .s{font:11.5px var(--f-sans,Inter,sans-serif);fill:#666}
+.cs-flow .n.core rect{stroke:#0aa859;stroke-width:2.5}
+.cs-flow .pill{font:700 10.5px var(--f-mono,monospace);letter-spacing:.06em}
+.cs-flow .ln{fill:none;stroke:#bdbdbd;stroke-width:2;stroke-dasharray:5 5}
+.cs-flow .dot{offset-rotate:0deg;opacity:0;animation:csGo 5s linear infinite}
+.cs-flow .d1{offset-path:path('M200,190 H270 H460 C505,190 505,70 540,70');fill:#0aa859}
+.cs-flow .d2{offset-path:path('M200,190 H270 H460 C505,190 505,315 540,315');fill:#ff3b30;animation-delay:2.5s}
+@keyframes csGo{0%{offset-distance:0%;opacity:0}6%{opacity:1}92%{opacity:1}100%{offset-distance:100%;opacity:0}}
+@media(prefers-reduced-motion:reduce){.cs-flow .dot{display:none}.cs-skel .hero::after{animation:none}}
+.cs-name{font-family:var(--f-display,'Anton',sans-serif);text-transform:uppercase;letter-spacing:-.02em;line-height:.95;font-size:clamp(30px,4vw,52px)}
+.cs-line{margin-top:16px;font-size:clamp(16px,1.5vw,18px);line-height:1.55;color:#444;max-width:460px}
+.cs-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.cs-chips li{font:600 13px/1 var(--f-sans,Inter,sans-serif);padding:9px 14px;border-radius:100px;background:#f1f1f1;color:#222}
+.cs-chips li:first-child{background:#e6f8ee;color:#067a41}
+.cs-more{display:inline-block;margin-top:26px;font-weight:600;color:#111;border-bottom:2px solid #19E67C}
+@media(max-width:860px){.cs-stage,.cs-list .cs-stage:nth-child(even){grid-template-columns:1fr}.cs-list .cs-stage:nth-child(even) .cs-vis{order:0}}

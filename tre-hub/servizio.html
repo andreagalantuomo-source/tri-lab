@@ -3,138 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servizio · 3-LAB consulenza Marcianise</title>
-<meta name="description" content="Dettaglio di un servizio 3-LAB.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="hub.css">
+<title>3-LAB · Pagina spostata</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://3-lab.it/">
+<script>
+// vecchio id servizio → servizio più vicino; ignoto o sparito → sezione servizi
+var m={"biz-1":"/#servizio-business-plan","biz-2":"/#servizio-business-plan","biz-3":"/#servizio-business-plan","biz-4":"/#servizio-business-plan","biz-5":"/#servizio-business-plan","biz-8":"/#servizio-business-plan","op-3":"/#servizio-gestionali","cre-1":"/case-study/"};
+var s=new URLSearchParams(location.search).get("s");
+location.replace(m[s]||"/#servizi");
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=/#servizi"></noscript>
 </head>
 <body>
-<div class="brandbar"></div>
-
-<header class="hub-nav">
-  <a class="hub-logo" href="../index.html">
-    <img src="../logo.svg" alt="" width="32" height="26">
-  </a>
-  <a class="hub-back" id="backBtn" href="../index.html#hubs" aria-label="Torna all'hub" title="Torna all'hub">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h3.5l2 2H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>
-  </a>
-</header>
-
-<main id="sv">
-  <section class="sv-hero">
-    <div class="wrap">
-      <div class="sv-eyebrow" id="eyebrow"></div>
-      <h1 class="sv-title" id="title"></h1>
-      <span class="m-tag" id="kind"></span>
-    </div>
-  </section>
-
-  <section class="sv-body">
-    <div class="wrap">
-      <div id="body"></div>
-      <div class="sv-back-cta">
-        <a class="hub-cta-btn" href="../index.html#contact">Parlane con noi <span>→</span></a>
-        <p style="margin-top:20px"><a id="toHub" href="../index.html#hubs" style="font-family:var(--f-mono);font-size:13px;letter-spacing:.03em;color:var(--slate)">← Torna all'hub</a></p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="hub-foot">
-  <div class="wrap">
-    <div>
-      <span class="foot-logo"><img src="../logo.svg" alt="" width="26" height="21"><span>3-LAB</span></span>
-      <p style="margin-top:6px">3-LAB © <span id="year">2026</span></p>
-    </div>
-    <p>Ingegneria · Economia · AI Agentica</p>
-  </div>
-</footer>
-
-<script src="hub-data.js"></script>
-<script>
-(function () {
-  'use strict';
-  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
-  function renderBlocks(container, blocks) {
-    blocks.forEach(function (b) {
-      var d = el('div', 'm-block');
-      d.appendChild(el('h4', null, b.h));
-      if (b.html) { var w = document.createElement('div'); w.innerHTML = b.html; while (w.firstChild) d.appendChild(w.firstChild); }
-      else d.appendChild(el('p', null, b.p));
-      container.appendChild(d);
-    });
-  }
-
-  var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
-
-  var id = new URLSearchParams(location.search).get('s');
-  var data = window.HUB_SERVICES && window.HUB_SERVICES[id];
-  var body = document.getElementById('body');
-
-  if (!data) {
-    document.getElementById('sv').innerHTML =
-      '<section class="sv-notfound"><div class="wrap"><h1>Servizio non trovato</h1>' +
-      '<p style="color:var(--slate)">Torna alla home per scegliere un hub.</p>' +
-      '<p style="margin-top:24px"><a class="hub-cta-btn" href="../index.html#hubs">Vai ai Tre Hub →</a></p></div></section>';
-    return;
-  }
-
-  var meta = window.HUB_META[data.hub];
-  document.body.style.setProperty('--acc', meta.accent);
-  document.title = data.title + ' · ' + meta.name + ' · 3-LAB';
-
-  var back = document.getElementById('backBtn');
-  back.href = meta.page; back.title = 'Torna al ' + meta.name; back.setAttribute('aria-label', 'Torna al ' + meta.name);
-  var toHub = document.getElementById('toHub');
-  toHub.href = meta.page; toHub.textContent = '← Torna al ' + meta.name;
-
-  var eb = document.getElementById('eyebrow');
-  eb.appendChild(el('b', null, meta.num));
-  eb.appendChild(document.createTextNode(' · ' + meta.name));
-
-  document.getElementById('title').textContent = data.title;
-  var kind = document.getElementById('kind');
-  kind.className = 'm-tag ' + data.kindClass;
-  kind.textContent = data.kind;
-
-  if (data.intro) body.appendChild(el('p', 'sv-intro', data.intro));
-
-  if (data.subs) {
-    data.subs.forEach(function (s) {
-      var sub = el('div', 'm-sub');
-      sub.appendChild(el('div', 'm-sub-h', s.h));
-      renderBlocks(sub, s.blocks);
-      body.appendChild(sub);
-    });
-  } else {
-    renderBlocks(body, data.blocks);
-  }
-
-  if (data.note) body.appendChild(el('p', 'm-note', data.note));
-
-  if (data.components) {
-    var mc = el('div', 'm-components');
-    data.components.forEach(function (c) {
-      var a = document.createElement('a'); a.className = 'm-comp'; a.href = 'servizio.html?s=' + c.to;
-      var wrap = document.createElement('div');
-      wrap.appendChild(el('div', 'c-t', c.t));
-      wrap.appendChild(el('div', 'c-d', c.d));
-      a.appendChild(wrap);
-      a.appendChild(el('span', 'c-go', 'Apri ↗'));
-      mc.appendChild(a);
-    });
-    body.appendChild(mc);
-  }
-
-  if (data.callout) {
-    var a = document.createElement('a'); a.className = 'm-callout'; a.href = 'servizio.html?s=' + data.callout.to;
-    a.appendChild(document.createTextNode(data.callout.label + ' '));
-    a.appendChild(el('span', null, '↗'));
-    body.appendChild(a);
-  }
-})();
-</script>
+<p>Questa pagina si è spostata: <a href="/#servizi">vai ai servizi</a>.</p>
 </body>
 </html>
