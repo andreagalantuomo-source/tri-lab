@@ -84,7 +84,7 @@ NUOVA_HOME = [
     Regola("nuova home: hero, sottotitolo e slogan", HOME, "contiene",
            ["Ingegneria, economia ed AI agentica per scalare senza caos",
             "Uniamo ingegneria, rigore economico e AI agentica per costruire le proporzioni strutturali perfette con cui scalare",
-            "Il metodo delle grandi aziende, alla portata di una PMI"], attiva=True),
+            "Arriviamo. Discutiamo. Automatizziamo. Voi vincete."], attiva=True),
     Regola("nuova home: sottotitolo hero vecchio assente", HOME, "assente",
            ["Dove la geometria incontra il business"], attiva=True),
     Regola("nuova home: secondo bottone hero verso Cosa facciamo, «Il nostro processo» non esiste più", HOME, "assente",
