@@ -104,14 +104,6 @@
       <p class="reveal"><b>Agente AI</b>: un assistente digitale a cui dai un compito e che lo porta a termine passo dopo passo. Una persona controlla i passaggi delicati.</p>
       <p class="reveal"><b>Automazione con agenti</b>: un processo ripetitivo costruito su misura, in cui uno o più agenti fanno i passaggi che oggi fai a mano.</p>
     </div>
-    <div class="ai-diagram reveal" aria-hidden="true"><svg class="n8n" viewBox="0 0 600 300" focusable="false">
-<g class="n8n-wires" fill="none" stroke="#8f8f8f" stroke-width="2"><g class="s1"><path class="w" d="M138 150H200"/></g><g class="s2"><path class="w" d="M264 192V232"/></g><g class="s3"><path class="w" d="M328 150C368 150 368 38 408 38"/><path class="w" d="M328 150C368 150 368 94 408 94"/><path class="w" d="M328 150C368 150 368 150 408 150"/><path class="w" d="M328 150C368 150 368 206 408 206"/><path class="w" d="M328 150C368 150 368 262 408 262"/></g></g>
-<g class="n8n-n"><g class="s1"><rect x="10" y="118" width="128" height="64" rx="12"/><rect x="10" y="118" width="8" height="64" rx="4" class="bar"/><text x="28" y="140" class="k">TRIGGER · CRM</text><text x="28" y="158" class="t">Cliente cambia</text><text x="28" y="174" class="t">stato in pipeline</text></g>
-<g class="s2"><rect x="200" y="108" width="128" height="84" rx="14" class="ag"/><text x="264" y="146" class="t ag-t" text-anchor="middle">Agente AI</text><text x="264" y="164" class="k ag-k" text-anchor="middle">DECIDE COSA FARE</text>
-<rect x="196" y="232" width="136" height="58" rx="14" class="kn"/><text x="264" y="254" class="k" text-anchor="middle">FONTE DI CONOSCENZA</text><text x="264" y="274" class="t" text-anchor="middle">Brain + CRM</text></g>
-<g class="s3" style="--k:0"><rect x="408" y="15" width="182" height="46" rx="12"/><text x="422" y="33" class="k">SE TRATTATIVA</text><text x="422" y="50" class="t">Invia il preventivo</text></g><g class="s3" style="--k:1"><rect x="408" y="71" width="182" height="46" rx="12"/><text x="422" y="89" class="k">SE VINTO</text><text x="422" y="106" class="t">Emette la fattura</text></g><g class="s3" style="--k:2"><rect x="408" y="127" width="182" height="46" rx="12"/><text x="422" y="145" class="k">SE CLIENTE SODDISFATTO</text><text x="422" y="162" class="t">Propone l'upsell</text></g><g class="s3" style="--k:3"><rect x="408" y="183" width="182" height="46" rx="12"/><text x="422" y="201" class="k">SE RICHIESTA ASSISTENZA</text><text x="422" y="218" class="t">Gestisce il ticket</text></g><g class="s3" style="--k:4"><rect x="408" y="239" width="182" height="46" rx="12" class="hu"/><text x="422" y="257" class="k">SE CASO DELICATO</text><text x="422" y="274" class="t">Passa a una persona</text></g></g>
-<g fill="#fff" stroke="#8f8f8f" stroke-width="2"><circle cx="138" cy="150" r="4"/><circle cx="200" cy="150" r="4"/><circle cx="328" cy="150" r="4"/><circle cx="264" cy="192" r="4"/><circle cx="264" cy="232" r="4"/><circle cx="408" cy="38" r="4"/><circle cx="408" cy="94" r="4"/><circle cx="408" cy="150" r="4"/><circle cx="408" cy="206" r="4"/><circle cx="408" cy="262" r="4"/></g></svg></div>
-    <p class="ai-caption reveal">Esempio: customer care collegato a CRM e brain. L'agente sa quando un cliente cambia stato nella pipeline e agisce di conseguenza: preventivo, fattura, upsell, ticket di assistenza.</p>
     <div class="cs-flow reveal" data-flow></div>
     <p class="ai-caption reveal">Esempio reale: la gestione dei ticket di OrientaCampus. L'agente risponde da solo a ciò che si ripete, smista il resto a chi di competenza. <a href="../case-study/"><b>Vedi i case study →</b></a></p>
   </div>
@@ -157,7 +149,6 @@
     io.observe(el);
   }
   avvia('.br-scene',[[700,'in'],[4700,'full'],[1500,'chat']],9500);
-  avvia('.ai-diagram',[[500,'p1'],[1100,'p2'],[1100,'p3']],6500);
 })();
 </script>
 <script src="../assets/casestudy.js" defer></script>
