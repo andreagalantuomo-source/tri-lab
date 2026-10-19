@@ -49,11 +49,7 @@ PRESENZA = [
     Regola("home: rimando a /case-study", HOME, "link", [CASE], attiva=True),
     Regola("home: competenze dei soci", HOME, "contiene",
            ["economisti", "ingegnere gestionale", "Step del framework A3, applicati a ogni progetto"], attiva=True),
-    Regola("home: box «Il metodo resta a te» prima della CTA", HOME, "ordine",
-           ["Il metodo resta a te", "Ti lasciamo", "Prenota una call conoscitiva", "gratuita", "30 minuti"], attiva=True),
-    Regola("home: box «Il metodo resta a te» dentro Perché noi", HOME, "ordine",
-           ["Perché noi", "Il metodo resta a te", "Scopri come lavora l'AI"], attiva=True),
-    Regola("nuova home: sezione Autonomia vecchia assente (ora è un box in Perché noi)", HOME, "assente",
+    Regola("nuova home: sezione Autonomia vecchia assente", HOME, "assente",
            ["Ti lasciamo metodo e strumenti per andare avanti", "anche senza di noi</h2>"], attiva=True),
     Regola("home: sede nei contatti", HOME, "contiene", ["Marcianise"], attiva=True),
     Regola("home: link a 3card.3-lab.it", HOME, "contiene", ["3card.3-lab.it"], attiva=True),
@@ -131,15 +127,11 @@ NUOVA_HOME = [
     # ticket 14 — card servizi in vetro, «Il metodo resta a te» come intestazione (non più card)
     Regola("nuova home: card servizi in liquid glass con sfondo di forme", HOME, "classi",
            ["sv-card", "glass", "sv-bg"], attiva=True),
-    Regola("nuova home: «Il metodo resta a te» è una card di Perché noi", HOME, "classi",
-           ["pn-card", "sec-title", "sec-sub"], attiva=True),
+    Regola("nuova home: sezione Perché noi eliminata", HOME, "assente",
+           ["Perché noi", "Competenze complementari", "Tre teste diverse"], attiva=True),
     Regola("nuova home: .pn-wide (box vecchio) assente", HOME, "senza-classi", ["pn-wide"], attiva=True),
     Regola("nuova home: popup senza i vecchi blocchi sv-blk", HOME, "senza-classi", ["sv-blk"], attiva=True),
-    # ticket 07 — perché noi
-    Regola("nuova home: perché noi con le tre card", HOME, "contiene",
-           ["Perché noi", "Tre teste diverse, pochi clienti, un metodo che resta a te",
-            "Competenze complementari", "Il metodo resta a te", "Il confronto"], attiva=True),
-    Regola("nuova home: perché noi senza il vecchio claim sull'AI", HOME, "assente",
+    Regola("nuova home: vecchi claim sull'AI assenti", HOME, "assente",
            ["il motore operativo di 3-Lab", "più veloce, costa meno", "Nel Piano", "Nell'Execution"], attiva=True),
     Regola("nuova home: sezione Qual è il ruolo dell'AI con i 4 passi e il claim", HOME, "contiene",
            ["Qual è il ruolo dell'AI?", "AI agentica", "non solo risponde", "Si istruisce",
@@ -162,7 +154,7 @@ NUOVA_HOME = [
     # ticket 10 — ordine complessivo delle sezioni
     Regola("nuova home: ordine delle sezioni", HOME, "ordine",
            ["Ingegneria, economia ed AI agentica", "Analizziamo i tuoi dati",
-            "Automazioni agentiche", "Perché noi", "Il metodo resta a te", "Qual è il ruolo dell'AI?", "Processo", "Valentino Immobiliare",
+            "Automazioni agentiche", "Il nostro framework A3", "Qual è il ruolo dell'AI?", "Valentino Immobiliare",
             "ingegnere gestionale", "Hai ancora domande?", "30 minuti"], attiva=True),
 ]
 

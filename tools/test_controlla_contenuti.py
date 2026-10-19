@@ -261,7 +261,7 @@ def jsonld_faq(qa):
 SEZIONI = [  # nuova home, in ordine di pagina
     ("hero", "Ingegneria, economia ed AI agentica per scalare senza caos. Uniamo ingegneria, rigore economico e "
              "AI agentica per costruire le proporzioni strutturali perfette con cui scalare. "
-             "Il metodo delle grandi aziende, alla portata di una PMI. Prenota una call conoscitiva"),
+             "Arriviamo. Discutiamo. Automatizziamo. Voi vincete. Il metodo delle grandi aziende, alla portata di una PMI. Prenota una call conoscitiva"),
     ("cosa", "Cosa facciamo. 01 Analizziamo i tuoi dati. 02 Ti aiutiamo a decidere dove portare la tua azienda. "
              "03 Costruiamo con te il sistema per arrivarci. "
              "04 Ti forniamo la bussola per accorgerti subito quando stai deviando. "
@@ -273,13 +273,11 @@ SEZIONI = [  # nuova home, in ordine di pagina
                 "Pianificazione strategica e organizzazione. Analisi di mercato e posizionamento. "
                 "Business model design. Piano economico-finanziario. "
                 "Costi reali per prodotto e cliente. Budget. Scostamenti"),
-    ("perche", "Perché noi. Tre teste diverse, pochi clienti, un metodo che resta a te. Competenze complementari. "
-              "Il metodo resta a te. Ti lasciamo. Il confronto"),
+    ("come", "Il nostro framework A3"),
     ("ai", "Qual è il ruolo dell'AI? AI agentica: esegue compiti, non solo risponde. Si istruisce. "
            "Si adatta all'ecosistema aziendale. Si mette a disposizione del team. "
            "Si usa come strumento di collaborazione avanzato. Chi aspetta continua a spendere ore preziose. "
            "Scopri come lavora l'AI"),
-    ("come", "Il nostro modo di lavorare"),
     ("case", "Il nostro portfolio. Valentino Immobiliare"),
     ("chi", "economisti ingegnere gestionale"),
     ("faq", "Hai ancora domande? Scrivici. " + " ".join(q + " " + a for q, a in FAQ_QA)),
@@ -296,8 +294,7 @@ class NuovaHome(Base):
     def home(self, sezioni):
         import regole
         ids = " ".join('<i id="servizio-%s"></i>' % x for x in regole.SERVIZI_SLUG)
-        extra = {"servizi": ids + '<i class="sv-bg"></i><ul><li class="sv-card glass">c</li></ul>' + popup(),
-                 "perche": '<ul><li class="pn-card"><h2 class="sec-title">t</h2><p class="sec-sub">s</p></li></ul>'}
+        extra = {"servizi": ids + '<i class="sv-bg"></i><ul><li class="sv-card glass">c</li></ul>' + popup()}
         corpo = "".join('<section id="%s"><p>%s</p>%s</section>' % (k, t, extra.get(k, ""))
                         for k, t in sezioni)
         self.scrivi("index.html", "<html><body>%s%s</body></html>" % (corpo, jsonld_faq(FAQ_QA)))
@@ -336,12 +333,12 @@ class NuovaHome(Base):
 
     def test_sezioni_in_ordine_sbagliato_falliscono(self):
         s = list(SEZIONI)
-        s[2], s[3] = s[3], s[2]  # perché noi prima dei servizi
+        s[2], s[3] = s[3], s[2]  # A3 prima dei servizi
         self.home(s)
         self.assertTrue(any("ordine" in e.regola for e in self.fallite_nuova_home()))
 
     def test_sezione_mancante_fallisce(self):
-        for chiave in ("faq", "servizi", "perche", "cosa", "ai"):
+        for chiave in ("faq", "servizi", "come", "cosa", "ai"):
             with self.subTest(chiave=chiave):
                 self.home([x for x in SEZIONI if x[0] != chiave])
                 self.assertTrue(self.fallite_nuova_home())
@@ -369,6 +366,11 @@ class PopupFisarmoniche(Base):
     def stato(self, html):
         self.scrivi("index.html", "<html><body>%s</body></html>" % html)
         return self.esiti([cc.Regola("p", "index.html", "popup-fisarmoniche", TITOLI_POPUP, attiva=True)])[-1].stato
+
+    def test_popup_a_due_colonne_con_componente_a3_passa(self):
+        voci = "".join('<li class="a3-i%s"><button class="a3-b"><span class="a3-n">0%d</span><span class="a3-t">%s</span></button></li>'
+                       % (" is-open" if n == 0 else "", n + 1, t) for n, t in enumerate(TITOLI_POPUP))
+        self.assertEqual(self.stato('<dialog class="sv-dlg"><ol class="a3 a3-v">%s</ol></dialog>' % voci), "ok")
 
     def test_cinque_summary_prima_aperta_passa(self):
         self.assertEqual(self.stato(popup()), "ok")
