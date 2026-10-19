@@ -1728,6 +1728,12 @@ html{scroll-snap-type:y proximity}
 .a3-x:empty{display:none}
 .a3-x{padding-top:0;margin-top:-14px}
 .a3-x li::before{background:var(--ink)}
+/* Menu: voci vicine, nere, in alto, corsivo serif, una riga; numeri incolonnati a destra e in grassetto */
+.sm-panel-list{flex:0 0 auto;justify-content:flex-start;gap:.15rem;min-height:0}
+.sm-item-wrap{flex:none;display:flex;align-items:center}
+.sm-item{display:block;width:100%;white-space:nowrap;color:#000;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em;font-size:clamp(3rem,min(13vw,8.2vh),4.9rem);line-height:1.08;padding-right:2.2em}
+.sm-item:hover{color:var(--sm-accent)}
+.sm-panel-list[data-numbering] .sm-item::after{top:50%;right:0;transform:translateY(-50%);font-style:normal;font-weight:700}
 @media(max-width:640px){
   .per{position:fixed;top:66px;right:14px;z-index:122}
   .per-b{height:36px;padding:0 12px;font-size:12px}
@@ -1844,8 +1850,8 @@ setTimeout(end,4200);
     <div class="sm-panel-inner">
       <ul class="sm-panel-list" data-numbering>
         <li class="sm-item-wrap"><a class="sm-item" href="#servizi"><span class="sm-item-label">Servizi</span></a></li>
-        <li class="sm-item-wrap"><a class="sm-item" href="ai/"><span class="sm-item-label">L'AI</span></a></li>
-        <li class="sm-item-wrap"><a class="sm-item" href="case-study/"><span class="sm-item-label">Case study</span></a></li>
+        <li class="sm-item-wrap"><a class="sm-item" href="#ai"><span class="sm-item-label">L'AI</span></a></li>
+        <li class="sm-item-wrap"><a class="sm-item" href="#case-study"><span class="sm-item-label">Case study</span></a></li>
         <li class="sm-item-wrap"><a class="sm-item" href="#about"><span class="sm-item-label">Chi Siamo</span></a></li>
         <li class="sm-item-wrap"><a class="sm-item" href="#contact"><span class="sm-item-label">Contatti</span></a></li>
       </ul>
@@ -2103,7 +2109,7 @@ setTimeout(end,4200);
       <div class="ais-p"><small>Il tuo team</small><span style="--k:0">Clienti</span><span style="--k:1">Decisioni</span><span style="--k:2">Strategia</span></div>
     </div>
     <p class="ai-claim reveal">Chi aspetta continua a spendere ore preziose in compiti ripetitivi, mentre chi l'ha implementata le dedica a crescere.</p>
-    <div class="pn-link reveal"><a class="p-link" href="ai/">Scopri come lavora l'AI <span class="arrow" aria-hidden="true">→</span></a></div>
+    <div class="pn-link reveal"><a class="btn" href="ai/">Scopri come lavora l'AI <span class="arrow" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
