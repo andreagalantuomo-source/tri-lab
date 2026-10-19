@@ -921,10 +921,42 @@ body.sm-open{overflow:hidden}
 .ai-steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1040px;margin:0 auto var(--s40)}
 .ai-steps li{display:flex;align-items:center;gap:10px;background:var(--mist);border-radius:16px;padding:12px 14px;font-weight:600;font-size:14px;line-height:1.25}
 .ai-steps i{font:500 11px/1 var(--f-mono);font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--volt);display:grid;place-items:center;flex:none}
-.ai-stage{max-width:880px;margin:0 auto;background:var(--mist);border-radius:28px;padding:clamp(18px,3vw,32px);display:grid;grid-template-columns:1.2fr auto 1fr;gap:22px;align-items:center}
+.ai-stage{max-width:880px;margin:0 auto;background:var(--mist);border-radius:28px;padding:clamp(18px,3vw,32px)}
+.ais-s1,.ais-s2{display:grid;grid-template-columns:1.2fr auto 1fr;gap:22px;align-items:center}
+.ais-s2{margin-top:22px}
+.ais-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:22px}
+.ais-tabs i{font:500 11px/1 var(--f-mono);font-style:normal;width:22px;height:22px;border-radius:50%;background:var(--mist);display:grid;place-items:center}
+.ais-tabs button{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:999px;padding:6px 14px 6px 8px;font:600 13px/1.2 var(--f-sans);color:var(--ink);cursor:pointer;transition:background .2s ease,color .2s ease}
+.ais-tabs button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.ais-tabs i{font:500 11px/1 var(--f-mono);font-style:normal;width:22px;height:22px;border-radius:50%;background:var(--mist);display:grid;place-items:center}
+.ai-stage:not(.anim) .ais-tabs{display:none}
+.ai-stage.anim .ais-tabs .t1,.ai-stage.anim.p3 .ais-tabs .t2{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ai-stage.anim .ais-tabs .t1 i,.ai-stage.anim.p3 .ais-tabs .t2 i{background:var(--volt);color:var(--ink)}
+.ai-stage.anim.p3 .ais-tabs .t1{background:#fff;color:var(--ink);border-color:rgba(0,0,0,.08)}
+.ai-stage.anim.p3 .ais-tabs .t1 i{background:var(--mist);color:var(--ink)}
+.ais-src{display:grid;gap:6px}
+.ais-src small{font:500 10px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
+.ais-src span{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:10px;padding:6px 12px;font-weight:600;font-size:12.5px}
+.ais-chat{display:grid;gap:7px;align-content:start}
+.ais-chat p{max-width:92%;padding:7px 11px;border-radius:14px;font-size:12px;line-height:1.35}
+.ais-chat .u{justify-self:end;background:var(--navy);color:#fff;border-radius:14px 14px 4px 14px}
+.ais-chat .a{justify-self:start;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:4px 14px 14px 14px;font-weight:500}
+.ais-chat b{color:var(--volt-deep)}
+.ais-note{margin-top:14px;text-align:center;font:500 10px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
+.ai-stage.anim .ais-body{display:grid}
+.ai-stage.anim .ais-s1,.ai-stage.anim .ais-s2{grid-area:1/1;margin-top:0;transition:opacity .5s ease}
+.ai-stage.anim .ais-s2{opacity:0;pointer-events:none}
+.ai-stage.anim.p3 .ais-s1{opacity:0}
+.ai-stage.anim.p3 .ais-s2{opacity:1}
+.ai-stage.anim .ais-chat p{opacity:0;translate:0 8px;transition:opacity .4s ease calc(var(--k)*.9s),translate .4s ease calc(var(--k)*.9s)}
+.ai-stage.anim.p3 .ais-chat p[style*="--g:0"],.ai-stage.anim.p4 .ais-chat p[style*="--g:1"],.ai-stage.anim.p5 .ais-chat p[style*="--g:2"]{opacity:1;translate:0 0}
+.ai-stage.anim.p4 .ais-chat p[style*="--g:0"],.ai-stage.anim.p5 .ais-chat p[style*="--g:0"],.ai-stage.anim.p5 .ais-chat p[style*="--g:1"]{opacity:1;translate:0 0;transition:none}
 .ais-q,.ais-p{display:grid;gap:8px}
 .ais-q small,.ais-p small{font:500 10px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
 .ais-q span,.ais-p span{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:9px 12px;font-weight:600;font-size:13px}
+.ais-p span{display:grid;gap:3px;justify-content:stretch}
+.ais-p span b{font-size:13px;line-height:1.2}
+.ais-p span em{font:400 12px/1.35 var(--f-sans);font-style:normal;color:var(--slate)}
 .ais-q i{position:relative;width:18px;height:18px;border-radius:50%;border:2px solid var(--ash);flex:none}
 .ais-q i::after{content:'';position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid var(--ink);border-width:0 2px 2px 0;rotate:45deg;opacity:0}
 .ais-ai{width:104px;height:104px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-content:center;text-align:center;gap:3px;box-shadow:0 0 0 7px rgba(43,45,81,.1)}
@@ -940,7 +972,7 @@ body.sm-open{overflow:hidden}
 .ai-stage.anim.p1:not(.p2) .ais-ai{animation:brPulse .5s ease-out infinite}
 .ai-stage.anim .ais-p span{opacity:.25;translate:10px 0;transition:opacity .4s ease calc(var(--k)*.35s),translate .4s ease calc(var(--k)*.35s)}
 .ai-stage.anim.p2 .ais-p span{opacity:1;translate:0 0}
-@media(max-width:900px){.ai-steps{grid-template-columns:1fr 1fr}.ai-stage{grid-template-columns:1fr;justify-items:stretch}.ais-ai{justify-self:center}}
+@media(max-width:900px){.ai-steps{grid-template-columns:1fr 1fr}.ais-s1,.ais-s2{grid-template-columns:1fr;justify-items:stretch}.ais-ai{justify-self:center}}
 @media(max-width:480px){.ai-steps{grid-template-columns:1fr}}
 .sv-ui-br{display:grid;place-items:center}
 .bp-roll{display:grid;gap:6px}
@@ -2088,7 +2120,7 @@ setTimeout(end,4200);
     <header class="sec-head reveal">
       <span class="sec-pill"><svg class="sec-pill-ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2l1.6 4.4L14 8l-4.4 1.6L8 14l-1.6-4.4L2 8l4.4-1.6z"/></svg>L'AI</span>
       <h2 class="sec-title">Qual è il <em>ruolo</em> dell'AI?</h2>
-      <p class="sec-sub">L'AI è il motore. Va istruita sul tuo contesto, poi ripete a una velocità che nessuna persona può tenere e libera il tempo del tuo team dai compiti ripetitivi per attività che valgono di più.</p>
+      <p class="sec-sub">L'AI è il motore. Va istruita sul tuo contesto, poi ripete a una velocità che nessuna persona può tenere: libera il tempo del tuo team dai compiti ripetitivi e affianca chi decide con dati, scenari e ricerche con analisi approfondite.</p>
       <p class="pn-agentica"><b>AI agentica</b> vuol dire un'AI che esegue compiti, non solo risponde.</p>
     </header>
     <ol class="ai-steps reveal">
@@ -2097,12 +2129,30 @@ setTimeout(end,4200);
       <li><i>3</i>Si mette a disposizione del team</li>
       <li><i>4</i>Si usa come strumento di collaborazione avanzato</li>
     </ol>
-    <div class="ai-stage reveal" aria-hidden="true">
+    <div class="ai-stage reveal">
+      <div class="ais-tabs"><button type="button" class="t1" aria-label="Scena 1: libera tempo"><i>1</i>Libera tempo</button><button type="button" class="t2" aria-label="Scena 2: decidi meglio"><i>2</i>Decidi meglio</button></div>
+      <div class="ais-body" aria-hidden="true">
+      <div class="ais-s1">
       <div class="ais-q"><small>Compiti ripetitivi</small><span style="--k:0">E-mail da smistare<i></i></span><span style="--k:1">Fattura da emettere<i></i></span><span style="--k:2">Scheda da aggiornare<i></i></span><span style="--k:3">Preventivo da preparare<i></i></span><span style="--k:4">Richiesta da classificare<i></i></span></div>
       <div class="ais-ai"><b>AI</b><small>istruita sul tuo contesto</small></div>
-      <div class="ais-p"><small>Il tuo team</small><span style="--k:0">Clienti</span><span style="--k:1">Decisioni</span><span style="--k:2">Strategia</span></div>
+      <div class="ais-p"><small>Il tempo liberato va a</small><span style="--k:0"><b>Clienti</b><em>Più visite e call, meno e-mail da smistare</em></span><span style="--k:1"><b>Decisioni</b><em>Margini e scostamenti già pronti, senza rincorrere i numeri</em></span><span style="--k:2"><b>Strategia</b><em>Nuovi mercati, nuovi servizi, crescita</em></span></div>
+      </div>
+      <div class="ais-s2">
+        <div class="ais-src"><small>Fonti sparse</small><span>Gestionale</span><span>Commercialista</span><span>CRM</span><span>E-mail</span><span>Excel</span></div>
+        <div class="ais-ai"><b>AI</b><small>istruita sul tuo contesto</small></div>
+        <div class="ais-chat">
+          <p class="u" style="--g:0;--k:0">Com'è andato il margine sull'ordine Bianchi?</p>
+          <p class="a" style="--g:0;--k:1">Il margine è <b>18%</b>, 4 punti sotto il preventivo: il listino del fornitore è salito del 30%.</p>
+          <p class="u" style="--g:1;--k:0">E se il fornitore sale di un altro 10%?</p>
+          <p class="a" style="--g:1;--k:1">Tre scenari: base <b>18%</b>, peggiore <b>13%</b>, migliore <b>21%</b> se rinegozi.</p>
+          <p class="u" style="--g:2;--k:0">Chi si sta muovendo nel mio settore in zona?</p>
+          <p class="a" style="--g:2;--k:1">Ricerca con analisi approfondita: <b>3 concorrenti</b> con prezzi in media più bassi dell'8% sui servizi base. Ti preparo il confronto.</p>
+        </div>
+      </div>
+      </div>
+      <p class="ais-note" aria-hidden="true">Esempio illustrativo</p>
     </div>
-    <p class="ai-claim reveal">Chi aspetta continua a spendere ore preziose in compiti ripetitivi, mentre chi l'ha implementata le dedica a crescere.</p>
+    <p class="ai-claim reveal">Chi aspetta continua a spendere ore preziose in compiti ripetitivi, mentre chi l'ha implementata le dedica a crescere, decidendo con i dati in mano.</p>
     <div class="pn-link reveal"><a class="p-link" href="ai/">Scopri come lavora l'AI <span class="arrow" aria-hidden="true">→</span></a></div>
   </div>
 </section>
@@ -2826,11 +2876,13 @@ document.querySelectorAll('.faq-q').forEach(function(b){
     document.querySelectorAll(sel).forEach(el=>{
       el.classList.add('anim');
       let giro=0;
-      async function parti(){const id=++giro; while(giro===id){
-        el.classList.add('rs'); passi.forEach(p=>el.classList.remove(p[1])); void el.offsetWidth; el.classList.remove('rs');
-        for(const [ms,c] of passi){await wait(ms); if(giro!==id) return; el.classList.add(c);}
-        await wait(pausa);
+      async function parti(da=0){const id=++giro; let d=da; while(giro===id){   /* da: indice del passo da cui ripartire subito (clic sulle tab) */
+        el.classList.add('rs'); passi.forEach(p=>el.classList.remove(p[1])); void el.offsetWidth;
+        passi.slice(0,d).forEach(p=>el.classList.add(p[1])); void el.offsetWidth; el.classList.remove('rs');
+        for(const [i,[ms,c]] of passi.slice(d).entries()){await wait(i===0&&d>0?0:ms); if(giro!==id) return; el.classList.add(c);}
+        d=0; await wait(pausa);
       }}
+      el.vai=parti;
       const dlg=el.closest('dialog');   /* copia nel popup: parte all'apertura, si ferma alla chiusura */
       if(dlg){ dlg.addEventListener('sv:open',()=>{ el.classList.add('rs'); setTimeout(parti,60); }); dlg.addEventListener('close',()=>{ giro++; }); return; }
       const io=new IntersectionObserver(es=>{if(!es[0].isIntersecting) return; io.disconnect(); parti();},{threshold:.4});   /* copia nella card: parte quando entra in vista */
@@ -2844,7 +2896,10 @@ document.querySelectorAll('.faq-q').forEach(function(b){
   avvia('.sv-ui-gr',[[500,'p1'],[1300,'p2'],[1300,'p3'],[1300,'p4'],[1500,'p5']],5500);
   avvia('.sv-ui-ge',[[500,'p1'],[2500,'p2'],[2600,'p3']],8000);
   avvia('.sv-ui-au',[[500,'p1'],[1100,'p2'],[1100,'p3']],6500);
-  avvia('.ai-stage',[[600,'p1'],[3000,'p2']],5500);
+  avvia('.ai-stage',[[600,'p1'],[3000,'p2'],[3200,'p3'],[2800,'p4'],[2800,'p5']],4500);
+  document.querySelectorAll('.ai-stage').forEach(st=>{ if(!st.vai) return;   /* tab: clic = vai subito alla scena, altrimenti avanza da solo */
+    st.querySelector('.t1').addEventListener('click',()=>st.vai(0));
+    st.querySelector('.t2').addEventListener('click',()=>st.vai(2)); });
 })();
 </script>
 <script>
