@@ -101,6 +101,11 @@ class Pagina(HTMLParser):
                 self._dlg["aperte"].append("open" in a)
             elif tag == "h4":
                 self._dlg["h4"] += 1
+            elif tag == "li" and "a3-i" in (a.get("class") or "").split():  # popup a due colonne: sezione del componente A3
+                self._dlg["aperte"].append("is-open" in (a.get("class") or "").split())
+            elif tag == "span" and "a3-t" in (a.get("class") or "").split():
+                self._dlg["summary"].append("")
+                self._sum = True
         if tag == "meta":
             if (a.get("http-equiv") or "").lower() == "refresh":
                 self.redirect = True
@@ -133,7 +138,7 @@ class Pagina(HTMLParser):
             self._in_title = False
         if tag == "script":
             self._in_ld = False
-        if tag == "summary":
+        if tag in ("summary", "span"):
             self._sum = False
         if tag == "dialog":
             self._dlg = None
