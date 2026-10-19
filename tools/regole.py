@@ -65,9 +65,7 @@ PRESENZA = [
            ["Agente AI", "company brain", "AI operating system", "Prenota una call conoscitiva"], attiva=True),
     # spec nuovo sito: /case-study
     Regola("/case-study: 5 progetti", CASE, "contiene", PROGETTI, attiva=True),
-    Regola("/case-study: progetti nell'ordine scelto da Andrea (16/10)", CASE, "ordine", ["Valentino Immobiliare", "OrientaCampus", "Medico Musone", "Salzillo Costruzioni", "L&A Impianti"], attiva=True),
-    Regola("/case-study: dogfooding e competenze", CASE, "contiene",
-           ["prima su di noi", "economisti", "ingegnere gestionale"], attiva=True),
+    Regola("/case-study: progetti nell'ordine scelto da Andrea (19/10, Valentino sempre ultimo)", CASE, "ordine", ["OrientaCampus", "L&A Impianti", "Salzillo Costruzioni", "Medico Musone", "Valentino Immobiliare"], attiva=True),
     Regola("/case-study: CSS condiviso", CASE, "link", ["assets/pilastro.css"], attiva=True),
     Regola("/case-study: CTA call conoscitiva", CASE, "contiene", ["Prenota una call conoscitiva"], attiva=True),
 ]

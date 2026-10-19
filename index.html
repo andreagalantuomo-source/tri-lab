@@ -3091,11 +3091,10 @@ document.querySelectorAll('.faq-q').forEach(function(b){
   const CARD_H=.5,RATIO=1.6,STEP=40,DRUM=2.22,LENS=2.7,RING_R=.78,BOW=1.82,TITLE=.088,INDEX=.04,CULL=1.6,EASE=.085;
   const clamp=(v,a,b)=>Math.min(b,Math.max(a,v)),lerp=(a,b,t)=>a+(b-a)*t,rad=d=>d*Math.PI/180;
   let turn=0,target=0,active=-1,M=null,visible=false,frame=0,playing=-1;
-  // il primo progetto dipende dal selettore «Per chi»; l'ordine resta ciclico
-  const KEYS=['3card','salzillo','musone','laimpianti','gestionale','valentino','pivot','oc'],FIRST={generale:'3card',produzione:'gestionale',servizi:'oc',medici:'musone',ristorazione:'pivot',commercio:'3card',edilizia:'salzillo'};
+  // ordine per importanza: prima i lavori più rilevanti (flusso OrientaCampus, gestionale L&A), i siti dopo, Valentino sempre ultimo; con «Per chi» = medici apre il sito del dott. Musone
+  const KEYS=['3card','salzillo','musone','laimpianti','gestionale','valentino','pivot','oc'],ORD=['oc','gestionale','3card','pivot','salzillo','laimpianti','musone','valentino'];
   window.wwFirst=function(per){
-    const k=Math.max(0,KEYS.indexOf(FIRST[per]||'3card')),n=O.c.length;
-    for(let j=0;j<n;j++){const i=(k+j)%n;wheel.appendChild(O.c[i]);logosBox.appendChild(O.l[i]);index.appendChild(O.b[i]);}
+    (per==='medici'?['musone'].concat(ORD.filter(x=>x!=='musone')):ORD).forEach(key=>{const i=KEYS.indexOf(key);wheel.appendChild(O.c[i]);logosBox.appendChild(O.l[i]);index.appendChild(O.b[i]);});
     collect();if(playing>=0&&vids[playing]){}playing=-1;active=-1;
   };
 

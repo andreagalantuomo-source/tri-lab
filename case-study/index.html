@@ -9,9 +9,69 @@
 <meta name="description" content="Cinque progetti reali di 3-LAB: CRM, automazioni, cruscotti e AI costruiti intorno ai processi di ogni azienda.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/pilastro.css">
 <link rel="stylesheet" href="../assets/casestudy.css">
+<style>
+/* Titoli come la home: Inter, parole speciali in Instrument Serif corsivo (.serif), le più determinanti con sottolineatura verde a mano (.rn) */
+body{--f-display:'Inter',ui-sans-serif,system-ui,sans-serif;--f-serif:'Instrument Serif',Georgia,serif}
+.hub-title,.hub-h2,.cs-name,.hub-bigcta h2{font-family:var(--f-sans);font-weight:500;text-transform:none;letter-spacing:-.035em;line-height:1.04;text-wrap:balance}
+.hub-title{font-size:clamp(40px,7.4vw,104px)}
+.hub-h2{font-size:clamp(30px,4.4vw,58px)}
+.cs-name{font-size:clamp(26px,3.2vw,42px);line-height:1.08;letter-spacing:-.03em}
+.hub-bigcta h2{font-size:clamp(38px,6.4vw,92px);line-height:1.2}
+.foot-logo span{font-weight:600;letter-spacing:-.02em}
+.serif{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:-.01em;font-size:1.12em}
+.rn{white-space:nowrap}
+.hub-hero .hub-tagline{margin-top:36px}
+.hub-h2{padding-bottom:10px}
+/* OrientaCampus: flusso della home (ticket, agente AI, risolta sì/no) */
+.cs-oc{border-radius:18px;border:1px solid #e3e3e3;background:#fff;padding:3%;box-shadow:0 40px 70px -48px rgba(0,0,0,.45)}
+.of{width:100%;height:auto;display:block}
+.of-n rect{fill:#fff;stroke:#d6d6d6;stroke-width:1.5}
+.of-n .t{font:700 17px var(--f-sans);fill:#111}
+.of-n .s{font:13.5px var(--f-sans);fill:#666}
+.of-core rect{stroke:#0aa859;stroke-width:3}
+.of-ok rect{stroke:#0aa859;fill:#effcf4}
+.of-ko rect{stroke:#ff3b30;fill:#fff3f2}
+.of-d path{fill:#fff8e6;stroke:#e0a100;stroke-width:2}
+.of-d text{font:700 15px var(--f-sans);fill:#111}
+.of-ln path{fill:none;stroke:#bdbdbd;stroke-width:2;stroke-dasharray:5 5}
+.of-y,.of-x{font:700 14px var(--f-mono)}
+.of-sm{font-size:11px;letter-spacing:.06em}
+.of-y{fill:#067a41}.of-x{fill:#ff3b30}
+.of-dot{fill:#0aa859}.of-dot--ko{fill:#ff3b30}.of-dot--br{fill:#6a8cff}
+/* L&A Impianti: in primo piano il CRM (schermata + bot, come in home), il sito dietro un clic */
+.cs-gest{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;border:1px solid #e3e3e3;box-shadow:0 40px 70px -48px rgba(0,0,0,.45);background:linear-gradient(135deg,#eaf1f9,#f7f9fc)}
+.gw-win{position:absolute;left:3.5%;top:11%;width:68%;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 20px 40px -22px rgba(0,0,0,.55);border:1px solid rgba(0,0,0,.1)}
+.gw-bar{display:flex;align-items:center;gap:5px;padding:7px 10px;background:#eef0f3}
+.gw-bar i{width:8px;height:8px;border-radius:50%;background:#c9ccd2}
+.gw-bar u{margin-left:10px;text-decoration:none;font:500 9px var(--f-mono);color:#6b7280}
+.gw-win img{display:block;width:100%;height:auto}
+.gw-phone{position:absolute;right:4%;top:6%;bottom:6%;width:24%;border-radius:22px;background:#0e1621;padding:7px;box-shadow:0 22px 44px -18px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:6px;overflow:hidden;font-family:var(--f-sans)}
+.gw-notch{position:absolute;top:7px;left:50%;width:34%;height:7px;border-radius:0 0 8px 8px;background:#000;transform:translateX(-50%)}
+.gw-head{display:flex;align-items:center;gap:6px;padding:12px 6px 6px;color:#fff;font-size:10px;border-bottom:1px solid rgba(255,255,255,.1)}
+.gw-head b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#2b8ef0;font-size:7px}
+.gw-head span{display:grid;line-height:1.15;font-weight:600}
+.gw-head small{font-weight:400;color:#7f93a8;font-size:8px}
+.gw-chat{flex:1;display:flex;flex-direction:column;gap:6px;padding:4px 2px;font-size:9px;line-height:1.4;background:#0e1621}
+.gw-chat .m{max-width:90%;padding:6px 8px;border-radius:10px;color:#fff}
+.gw-chat .me{align-self:flex-end;background:#2b5278}
+.gw-chat .bot{align-self:flex-start;background:#182533}
+.gw-chat em{font-style:normal;color:#7ec3ff}
+.gw-chat .cz,.cz{filter:blur(3.5px);font-style:normal}
+.gw-btns{display:grid;gap:4px}
+.gw-btns u{text-decoration:none;text-align:center;padding:5px;border-radius:7px;background:rgba(43,142,240,.22);color:#9fd0ff;font-size:9px}
+.cs-sw [hidden]{display:none}
+.cs-tabs{display:flex;gap:6px;margin-top:14px}
+.cs-tabs button{font:600 13px var(--f-sans);padding:7px 16px;border-radius:999px;border:1px solid #e3e3e3;background:#fff;color:#444;cursor:pointer}
+.cs-tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.cs-tabs button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+/* Schermate dei siti intere (prima il centro-sinistra veniva tagliato) e chip tutti uguali: non sono cliccabili */
+.cs-frame:has(>img){aspect-ratio:auto;padding-top:34px}
+.cs-frame>img{position:static;display:block;height:auto;object-fit:initial}
+.cs-chips li,.cs-chips li:first-child{background:#e6f8ee;color:#067a41}
+</style>
 </head>
 <body style="--acc:var(--navy)">
 <div class="brandbar"></div>
@@ -30,7 +90,7 @@
 <section class="hub-hero">
   <div class="wrap">
     <div class="hub-num reveal"><b>Case study</b> · Cinque progetti</div>
-    <h1 class="hub-title reveal">Sistemi che<br>funzionano</h1>
+    <h1 class="hub-title reveal">Sistemi che<br><span class="serif rn">funzionano</span></h1>
     <p class="hub-tagline reveal">Ogni progetto nasce dai processi di chi lo usa: meno lavoro ripetitivo, più tempo per quello che conta.</p>
     <p class="hub-intro reveal">Cinque aziende, settori diversi. In ognuna trovi il sistema che abbiamo costruito e cosa fa ogni giorno al posto delle persone.</p>
     <div class="hub-accentbar reveal"></div>
@@ -40,22 +100,31 @@
 <section class="hub-section">
   <div class="wrap">
     <span class="hub-kicker reveal">I progetti</span>
-    <h2 class="hub-h2 reveal">Cinque aziende, cinque sistemi</h2>
+    <h2 class="hub-h2 reveal">Cinque aziende, <span class="serif">cinque sistemi</span></h2>
 
-    <div class="cs-list"><article class="cs-stage reveal"><div class="cs-vis"><div class="cs-frame"><div class="cs-bar"><i></i><i></i><i></i><span>valentino immobiliare</span></div><video src="../Anteprime/web/valentino.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Anteprima del progetto Valentino Immobiliare"></video></div></div><div><h2 class="cs-name">Valentino Immobiliare</h2><p class="cs-line">Appuntamenti, modulistica e richieste dei clienti gestiti da un unico sistema, che abbina da solo ogni richiesta all'immobile giusto.</p><ul class="cs-chips"><li>Sito</li><li>App per gli appuntamenti</li><li>Modulistica automatica</li><li>CRM dai form</li><li>Abbinamento richieste-immobili</li></ul></div></article><article class="cs-stage reveal"><div class="cs-vis"><div class="cs-flow" data-flow></div></div><div><h2 class="cs-name">OrientaCampus</h2><p class="cs-line">Ogni richiesta entra da un solo punto. L'agente AI risponde da solo a quelle ripetitive e smista le altre al responsabile giusto.</p><ul class="cs-chips"><li>Procedure ristrutturate</li><li>Ticketing con AI</li><li>Company brain</li><li>Piano strategico</li></ul></div></article><article class="cs-stage reveal"><div class="cs-vis"><div class="cs-frame"><div class="cs-bar"><i></i><i></i><i></i><span>dott.musone.3-lab.it</span></div><img src="../Anteprime/web/musone.jpg" alt="Anteprima del progetto Medico Musone" loading="lazy"></div></div><div><h2 class="cs-name">Medico Musone</h2><p class="cs-line">Dalla prima visita alla ricetta il lavoro ripetitivo si fa da solo, e un sistema addestrato sui suoi dati lo aiuta a capire dove migliorare.</p><ul class="cs-chips"><li>Sito</li><li>CRM e outreach</li><li>Bot di trascrizione vocale</li><li>Ricette automatizzate</li><li>Sistema addestrato sui suoi dati</li></ul></div></article><article class="cs-stage reveal"><div class="cs-vis"><div class="cs-frame"><div class="cs-bar"><i></i><i></i><i></i><span>salzillo-costruzioni.3-lab.it</span></div><img src="../Anteprime/web/salzillo.jpg" alt="Anteprima del progetto Salzillo Costruzioni" loading="lazy"></div></div><div><h2 class="cs-name">Salzillo Costruzioni</h2><p class="cs-line">Dal sopralluogo prenotato online al margine di ogni cantiere: previsto e reale sempre a confronto, contatti già classificati.</p><ul class="cs-chips"><li>Sito con prenotazione sopralluogo</li><li>Cruscotto dei margini per cantiere</li><li>CRM con contatti classificati</li><li>Outreach</li></ul></div></article><article class="cs-stage reveal"><div class="cs-vis"><div class="cs-frame"><div class="cs-bar"><i></i><i></i><i></i><span>laimpianti.3-lab.it</span></div><img src="../Anteprime/web/laimpianti.jpg" alt="Anteprima del progetto L&amp;A Impianti" loading="lazy"></div></div><div><h2 class="cs-name">L&amp;A Impianti</h2><p class="cs-line">Chi scrive è un'impresa o un privato? Il sistema lo capisce e passa al CRM un contatto già pronto da lavorare.</p><ul class="cs-chips"><li>Sito</li><li>Form che classifica il committente</li><li>CRM automatizzato</li></ul></div></article></div>
+    <div class="cs-list"><article class="cs-stage reveal"><div class="cs-vis"><div class="cs-oc"><svg class="of" viewBox="10 180 1000 310" role="img" aria-label="Flusso: il ticket arriva all'agente AI, che consulta il company brain e risponde. Se il problema è risolto il cliente esce, altrimenti la richiesta passa al responsabile tecnico, che la risolve e il cliente esce soddisfatto.">
+<g class="of-ln"><path d="M200,250H250"/><path d="M345,300V360" class="of-brain"/><path d="M440,250H500"/><path d="M640,250H686"/><path d="M794,250H860"/><path d="M740,304V380"/><path d="M855,425H926V285"/><path d="M440,280C505,280 540,425 625,425"/></g>
+<g class="of-n"><rect x="30" y="215" width="170" height="70" rx="14"/><text class="t" x="46" y="247">Ticket in entrata</text><text class="s" x="46" y="268">email · chat · modulo</text></g>
+<g class="of-n of-core"><rect x="250" y="200" width="190" height="100" rx="14"/><text class="t" x="266" y="244">Agente AI centrale</text><text class="s" x="266" y="266">capisce la richiesta</text></g>
+<g class="of-n"><rect x="250" y="360" width="190" height="90" rx="14"/><text class="t" x="266" y="400">Company brain</text><text class="s" x="266" y="422">attinge a tutte le info</text></g>
+<g class="of-n"><rect x="500" y="215" width="140" height="70" rx="14"/><text class="t" x="516" y="247">Risposta</text><text class="s" x="516" y="268">al cliente subito</text></g>
+<g class="of-d"><path d="M740,196L794,250L740,304L686,250Z"/><text x="740" y="256" text-anchor="middle">Risolta?</text></g>
+<g class="of-n of-ok"><rect x="860" y="215" width="132" height="70" rx="14"/><text class="t" x="876" y="247">Cliente</text><text class="s" x="876" y="268">esce soddisfatto</text></g>
+<g class="of-n of-ko"><rect x="625" y="380" width="230" height="90" rx="14"/><text class="t" x="641" y="420">Responsabile tecnico</text><text class="s" x="641" y="442">smistata a chi è di competenza</text></g>
+<text class="of-y" x="827" y="240" text-anchor="middle">SÌ</text><text class="of-x" x="754" y="346">NO</text><text class="of-x of-sm" x="452" y="472">RICHIESTA STRAORDINARIA</text>
+<circle r="7" class="of-dot"><animateMotion dur="9s" repeatCount="indefinite" path="M115,250H345H570H740H920"/></circle>
+<circle r="7" class="of-dot of-dot--ko" opacity="0"><animate attributeName="opacity" to="1" begin="4.5s" dur="0.01s" fill="freeze"/><animateMotion dur="9s" begin="4.5s" repeatCount="indefinite" path="M115,250H345H570H740V425H855H926V285"/></circle>
+<circle r="7" class="of-dot of-dot--ko" opacity="0"><animate attributeName="opacity" to="1" begin="1s" dur="0.01s" fill="freeze"/><animateMotion dur="7s" begin="1s" repeatCount="indefinite" path="M115,250H345V280H440C505,280 540,425 625,425H700"/></circle>
+<circle r="6" class="of-dot of-dot--br"><animateMotion dur="3s" repeatCount="indefinite" path="M345,300V360V300"/></circle>
+</svg></div></div><div><h2 class="cs-name">OrientaCampus</h2><p class="cs-line">Ogni richiesta entra da un solo punto. L'agente AI risponde da solo a quelle ripetitive e smista le altre al responsabile giusto.</p><ul class="cs-chips"><li>Procedure ristrutturate</li><li>Ticketing con AI</li><li>Company brain</li><li>Piano strategico</li></ul></div></article><article class="cs-stage reveal"><div class="cs-vis cs-sw"><div class="cs-gest" data-v="crm"><span class="gw-win"><span class="gw-bar"><i></i><i></i><i></i><u>lagestionale.3-lab.it</u></span><img src="../assets/portfolio/gestionale-la.jpg" alt="Schermata del gestionale L&amp;A con i dati oscurati"></span><span class="gw-phone" aria-hidden="true"><span class="gw-notch"></span><span class="gw-head"><b>L&amp;A</b><span>L&amp;A Bot<small>bot</small></span></span><span class="gw-chat"><span class="m me">/giornata</span><span class="m bot"><b>Domani</b> · 3 squadre<br><em>Squadra A</em> · <i class="cz">Cantiere scuola</i> · 07:30<br><em>Squadra B</em> · <i class="cz">Manutenzione Rossi</i> · 08:00</span><span class="m bot">Righe da confermare: <b>2</b></span><span class="gw-btns"><u>Conferma</u><u>Apri gestionale</u></span></span></span></div><div class="cs-frame" data-v="sito" hidden><div class="cs-bar"><i></i><i></i><i></i><span>laimpianti.3-lab.it</span></div><img src="../Anteprime/web/laimpianti.jpg" alt="Anteprima del progetto L&amp;A Impianti" loading="lazy"></div><div class="cs-tabs" role="group" aria-label="Cosa mostrare"><button type="button" class="on" data-t="crm">CRM</button><button type="button" data-t="sito">Sito</button></div></div><div><h2 class="cs-name">L&amp;A Impianti</h2><p class="cs-line">Chi scrive è un'impresa o un privato? Il sistema lo capisce e passa al CRM un contatto già pronto da lavorare.</p><ul class="cs-chips"><li>Sito</li><li>Form che classifica il committente</li><li>CRM automatizzato</li></ul></div></article><article class="cs-stage reveal"><div class="cs-vis"><div class="cs-frame"><div class="cs-bar"><i></i><i></i><i></i><span>salzillo-costruzioni.3-lab.it</span></div><img src="../Anteprime/web/salzillo.jpg" alt="Anteprima del progetto Salzillo Costruzioni" loading="lazy"></div></div><div><h2 class="cs-name">Salzillo Costruzioni</h2><p class="cs-line">Dal sopralluogo prenotato online al margine di ogni cantiere: previsto e reale sempre a confronto, contatti già classificati.</p><ul class="cs-chips"><li>Sito con prenotazione sopralluogo</li><li>Cruscotto dei margini per cantiere</li><li>CRM con contatti classificati</li><li>Outreach</li></ul></div></article><article class="cs-stage reveal"><div class="cs-vis"><div class="cs-frame"><div class="cs-bar"><i></i><i></i><i></i><span>dott.musone.3-lab.it</span></div><img src="../Anteprime/web/musone.jpg" alt="Anteprima del progetto Medico Musone" loading="lazy"></div></div><div><h2 class="cs-name">Medico Musone</h2><p class="cs-line">Dalla prima visita alla ricetta il lavoro ripetitivo si fa da solo, e un sistema addestrato sui suoi dati lo aiuta a capire dove migliorare.</p><ul class="cs-chips"><li>Sito</li><li>CRM e outreach</li><li>Bot di trascrizione vocale</li><li>Ricette automatizzate</li><li>Sistema addestrato sui suoi dati</li></ul></div></article><article class="cs-stage reveal"><div class="cs-vis"><div class="cs-frame"><div class="cs-bar"><i></i><i></i><i></i><span>valentino immobiliare</span></div><video src="../Anteprime/web/valentino.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Anteprima del progetto Valentino Immobiliare"></video></div></div><div><h2 class="cs-name">Valentino Immobiliare</h2><p class="cs-line">Appuntamenti, modulistica e richieste dei clienti gestiti da un unico sistema, che abbina da solo ogni richiesta all'immobile giusto.</p><ul class="cs-chips"><li>Sito</li><li>App per gli appuntamenti</li><li>Modulistica automatica</li><li>CRM dai form</li><li>Abbinamento richieste-immobili</li></ul></div></article></div>
 
-    <span class="hub-kicker reveal" style="margin-top:56px;display:inline-block">Chi lo fa</span>
-    <h2 class="hub-h2 reveal">Li usiamo prima su di noi</h2>
-    <div class="pil-ciclo reveal">
-      <p>Il cruscotto, il CRM e il company brain di 3-LAB sono reali: gli strumenti li proviamo <b>prima su di noi</b>. Li guidano tre soci, un <b>ingegnere gestionale</b> e due <b>economisti</b>, che portano alle PMI strategia finanziaria, esecuzione ingegneristica e AI su misura. Leggi <a href="../ai/"><b>come lavora l'AI →</b></a></p>
-    </div>
   </div>
 </section>
 
 <section class="hub-bigcta">
   <div class="wrap">
     <span class="hub-kicker reveal">Il prossimo passo</span>
-    <h2 class="reveal">QUALE SISTEMA<br>SERVE ALLA TUA AZIENDA?</h2>
+    <h2 class="reveal">Quale sistema<br>serve alla <span class="serif rn">tua azienda</span>?</h2>
     <p class="reveal">Una conversazione gratuita di 30 minuti per capire quali attività ripetitive consumano più ore da voi e quale sistema conviene costruire.</p>
     <div class="hub-bigcta-actions reveal">
       <a class="hub-cta-btn" href="../#contact">Prenota una call conoscitiva <span>→</span></a>
@@ -74,7 +143,40 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rough-notation/0.5.1/rough-notation.iife.js"></script>
 <script src="../assets/pilastro.js"></script>
+<script>
+/* Sottolineatura verde a mano (rough-notation, come «scalare senza caos» in home) sulle parole .rn: si disegna quando entrano in vista, animata solo la prima volta e senza «riduci animazioni». Ridisegnata al resize. */
+(function(){
+  if(!window.RoughNotation||!('IntersectionObserver' in window)) return;
+  const mq=matchMedia('(prefers-reduced-motion: reduce)'), els=[...document.querySelectorAll('.rn')], an=new Map();
+  function disegna(el,anima){
+    if(an.has(el)) an.get(el).remove();
+    const a=RoughNotation.annotate(el,{type:'underline',color:'#0aa859',strokeWidth:4,padding:3,iterations:2,animate:anima&&!mq.matches,animationDuration:900});
+    an.set(el,a); a.show();
+  }
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; io.unobserve(e.target);
+    setTimeout(()=>disegna(e.target,true),700);   /* dopo l'ingresso (.reveal dura .7s), così misura la posizione finale */
+  }),{threshold:.6});
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>els.forEach(el=>io.observe(el)));
+  let t; addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>an.forEach((a,el)=>disegna(el,false)),150);});
+})();
+</script>
+<script>
+/* Con «Per chi» = medici (scelta della home) il primo progetto è Medico Musone; Valentino resta sempre ultimo. */
+try{if(localStorage.getItem('per')==='medici'){var l=document.querySelector('.cs-list'),m=[].filter.call(l.children,function(a){return a.querySelector('.cs-name').textContent==='Medico Musone'})[0];if(m)l.insertBefore(m,l.firstChild);}}catch(e){}
+</script>
+<script>
+/* L&A: CRM o sito. Il CRM è il primo, il sito si vede con un clic. */
+document.querySelectorAll('.cs-sw').forEach(function(w){
+  w.querySelectorAll('.cs-tabs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      w.querySelectorAll('[data-v]').forEach(function(v){v.hidden=v.dataset.v!==b.dataset.t;});
+      w.querySelectorAll('.cs-tabs button').forEach(function(x){x.classList.toggle('on',x===b);});
+    });
+  });
+});
+</script>
 <script src="../assets/casestudy.js" defer></script>
 </body>
 </html>
