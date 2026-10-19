@@ -9,9 +9,23 @@
 <meta name="description" content="L'AI in 3-LAB non è un servizio a parte: lavora dentro il Piano, l'Execution e la Bussola. Cosa vuol dire integrarla nei processi, con esempi concreti e in parole semplici.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/pilastro.css">
 <link rel="stylesheet" href="../assets/casestudy.css">
+<style>
+/* Titoli come la home: Inter, parole speciali in Instrument Serif corsivo (.serif), le più determinanti con sottolineatura verde a mano (.rn) */
+body{--f-display:'Inter',ui-sans-serif,system-ui,sans-serif;--f-serif:'Instrument Serif',Georgia,serif}
+.hub-title,.hub-h2,.flag h3,.hub-bigcta h2{font-family:var(--f-sans);font-weight:500;text-transform:none;letter-spacing:-.035em;line-height:1.04;text-wrap:balance}
+.hub-title{font-size:clamp(40px,7.4vw,104px)}
+.hub-h2{font-size:clamp(30px,4.4vw,58px)}
+.flag h3{font-size:clamp(30px,4.6vw,60px)}
+.hub-bigcta h2{font-size:clamp(38px,6.4vw,92px);line-height:1.2}
+.foot-logo span{font-weight:600;letter-spacing:-.02em}
+.serif{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:-.01em;font-size:1.12em}
+.rn{white-space:nowrap}
+.hub-hero .hub-tagline{margin-top:36px}
+.hub-h2{padding-bottom:10px}
+</style>
 </head>
 <body style="--acc:var(--navy)">
 <div class="brandbar"></div>
@@ -30,7 +44,7 @@
 <section class="hub-hero">
   <div class="wrap">
     <div class="hub-num reveal"><b>AI</b> · Il motore</div>
-    <h1 class="hub-title reveal">L'AI non si compra.<br>Si implementa.</h1>
+    <h1 class="hub-title reveal">L'AI non si compra.<br><span class="serif rn">Si implementa.</span></h1>
     <p class="hub-tagline reveal">Lavora dentro i processi che la tua azienda ha già: legge, risponde, aggiorna, prepara. Tu non apri uno strumento in più.</p>
     <p class="hub-intro reveal">Per questo non la vendiamo a parte: è il motore del <b>Piano</b>, dell'<b>Execution</b> e della <b>Bussola</b>.</p>
     <ol class="ai-steps reveal"><li><i>1</i>Si istruisce</li><li><i>2</i>Si adatta all'ecosistema aziendale</li><li><i>3</i>Si mette a disposizione del team</li><li><i>4</i>Si usa come strumento di collaborazione avanzato</li></ol>
@@ -45,7 +59,7 @@
       <div class="flag-split">
         <div class="flag-copy">
           <span class="flag-badge">Il cuore dell'AI in azienda</span>
-          <h3>Company brain e AI operating system</h3>
+          <h3><span class="serif">Company brain</span> e AI operating system</h3>
           <p class="flag-lede">Un'AI generica non conosce la tua azienda. Questa lavora su ciò che l'azienda sa davvero, e tutti lavorano sulla stessa fonte.</p>
           <ul class="flag-defs">
             <li><span>Company brain</span>L'archivio unico di ciò che l'azienda sa, da interrogare in chat come un collega.</li>
@@ -69,7 +83,7 @@
 <section class="hub-section" style="padding-top:0">
   <div class="wrap">
     <span class="hub-kicker reveal">Dentro i tre pilastri</span>
-    <h2 class="hub-h2 reveal">Prima e con l'AI</h2>
+    <h2 class="hub-h2 reveal">Prima e <span class="serif">con l'AI</span></h2>
     <div class="ai-scenes">
       <article class="ai-scene reveal" id="nel-piano">
         <span class="offer-n">Piano</span>
@@ -99,7 +113,7 @@
 <section class="hub-section" style="padding-top:0">
   <div class="wrap">
     <span class="hub-kicker reveal">Un agente al lavoro</span>
-    <h2 class="hub-h2 reveal">Dalla richiesta alla risposta, senza passaggi a mano</h2>
+    <h2 class="hub-h2 reveal">Dalla richiesta alla risposta, <span class="serif rn">senza passaggi a mano</span></h2>
     <div class="ai-agenti">
       <p class="reveal"><b>Agente AI</b>: un assistente digitale a cui dai un compito e che lo porta a termine passo dopo passo. Una persona controlla i passaggi delicati.</p>
       <p class="reveal"><b>Automazione con agenti</b>: un processo ripetitivo costruito su misura, in cui uno o più agenti fanno i passaggi che oggi fai a mano.</p>
@@ -112,7 +126,7 @@
 <section class="hub-bigcta">
   <div class="wrap">
     <span class="hub-kicker reveal">Il prossimo passo</span>
-    <h2 class="reveal">DOVE TOGLIERE<br>LAVORO ALLA TUA AZIENDA?</h2>
+    <h2 class="reveal">Dove togliere <span class="serif rn">lavoro</span><br>alla tua azienda?</h2>
     <p class="reveal">Una conversazione gratuita di 30 minuti per capire quali attività ripetitive consumano più ore da voi e da dove conviene partire.</p>
     <div class="hub-bigcta-actions reveal">
       <a class="hub-cta-btn" href="../#contact">Prenota una call conoscitiva <span>→</span></a>
@@ -131,7 +145,25 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rough-notation/0.5.1/rough-notation.iife.js"></script>
 <script src="../assets/pilastro.js"></script>
+<script>
+/* Sottolineatura verde a mano (rough-notation, come «scalare senza caos» in home) sulle parole .rn: si disegna quando entrano in vista, animata solo la prima volta e senza «riduci animazioni». Ridisegnata al resize. */
+(function(){
+  if(!window.RoughNotation||!('IntersectionObserver' in window)) return;
+  const mq=matchMedia('(prefers-reduced-motion: reduce)'), els=[...document.querySelectorAll('.rn')], an=new Map();
+  function disegna(el,anima){
+    if(an.has(el)) an.get(el).remove();
+    const a=RoughNotation.annotate(el,{type:'underline',color:'#0aa859',strokeWidth:4,padding:3,iterations:2,animate:anima&&!mq.matches,animationDuration:900});
+    an.set(el,a); a.show();
+  }
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; io.unobserve(e.target);
+    setTimeout(()=>disegna(e.target,true),700);   /* dopo l'ingresso (.reveal dura .7s), così misura la posizione finale */
+  }),{threshold:.6});
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>els.forEach(el=>io.observe(el)));
+  let t; addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>an.forEach((a,el)=>disegna(el,false)),150);});
+})();
+</script>
 <script>
 /* Animazioni: il brain (le voci entrano, il brain si ingrossa, parte la chat) e il diagramma dell'agente (trigger, agente, fonte, azioni). Partono in vista e ripartono da zero; con «riduci animazioni» restano ferme. */
 (function(){
