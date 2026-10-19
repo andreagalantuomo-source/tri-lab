@@ -753,12 +753,21 @@ body.sm-open{overflow:hidden}
 /* mini-illustrazioni UI (solo HTML/CSS, decorative) */
 .sv-ui{margin-top:auto;pointer-events:none;font-size:12px;line-height:1.3;color:var(--ink);transition:transform .35s}
 .sv-card:hover .sv-ui{transform:scale(1.015)}
-.sv-ui-bp{display:flex;flex-direction:column;gap:28px;margin-top:24px;flex:1}
+.sv-ui-bp{display:flex;flex-direction:column;justify-content:space-between;gap:20px;margin-top:24px;flex:1}
 .bp-seq{list-style:none;display:grid;gap:10px}
 .bp-seq li{position:relative;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:10px 12px;font-weight:600;box-shadow:0 6px 16px -12px rgba(0,0,0,.35)}
 .bp-seq li:not(:last-child)::after{content:'';position:absolute;left:23px;top:100%;height:10px;width:2px;background:var(--volt-deep)}
 .bp-seq i{font:500 11px/1 var(--f-mono);font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--volt);display:grid;place-items:center}
-.bp-scen{display:flex;align-items:flex-end;gap:10px;flex:1;min-height:150px}
+.bp-scw{display:grid;gap:8px}
+.bp-scw small,.bp-act small,.bp-for small{font:500 10px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
+.bp-scen{display:flex;align-items:flex-end;gap:10px;height:140px}
+.bp-act{display:grid;gap:7px}
+.bp-act div{display:grid;grid-template-columns:78px 1fr;align-items:center;gap:10px;font-size:11.5px}
+.bp-act b{font-weight:600}
+.bp-act u{display:block;height:8px;border-radius:100px;background:linear-gradient(90deg,var(--volt),#9df0bd);width:calc(var(--m)*100%);text-decoration:none}
+.bp-for{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.bp-for small{margin-right:4px}
+.bp-for span{font-weight:600;font-size:11px;padding:6px 12px;border-radius:100px;background:#fff;border:1px solid rgba(0,0,0,.1)}
 .bp-scen span{flex:1;height:calc(var(--h)*100%);min-height:30px;border-radius:12px 12px 6px 6px;background:linear-gradient(180deg,#d1ffca,#9df0bd);display:flex;align-items:flex-end;justify-content:center;padding:6px 2px}
 .bp-scen em{font-style:normal;font-weight:600;font-size:11px}
 .n8n{display:block;width:100%;max-width:640px;margin:0 auto;height:auto;overflow:visible;font-family:var(--f-sans)}
@@ -837,10 +846,22 @@ body.sm-open{overflow:hidden}
 .gv-gest small{font:500 10px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
 .gv-row{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--mist);border-radius:8px;padding:5px 8px;font-size:12px;font-weight:500}
 .gv-row b{background:#d1ffca;color:#0b5a2f;font-size:10.5px;padding:2px 8px;border-radius:100px;white-space:nowrap}
-.gv-chat{display:grid;gap:6px}
+.gv-chat{display:grid;gap:7px;align-content:start}
 .gv-chat p{max-width:90%;padding:7px 11px;border-radius:14px;font-size:11.5px;line-height:1.35}
 .gv-chat .u{justify-self:end;background:var(--navy);color:#fff;border-radius:14px 14px 4px 14px}
 .gv-chat .a{justify-self:start;background:var(--mist);border:1px solid rgba(0,0,0,.06);border-radius:4px 14px 14px 14px;font-weight:500}
+.gv-chat b{color:var(--volt-deep)}
+.gv-phone{position:relative;box-sizing:border-box;width:240px;max-width:100%;margin:16px auto 0;background:#fff;border:7px solid #1c1d33;border-radius:34px;padding:22px 10px 12px;box-shadow:0 18px 34px -18px rgba(0,0,0,.5)}
+.ph-notch{position:absolute;top:6px;left:50%;translate:-50% 0;width:64px;height:14px;background:#1c1d33;border-radius:100px}
+.ph-head{display:grid;grid-template-columns:auto 1fr;column-gap:7px;align-items:center;font-weight:600;font-size:11.5px;padding:6px 2px 9px;border-bottom:1px solid rgba(0,0,0,.08);margin-bottom:9px}
+.ph-head span{grid-row:span 2;width:22px;height:22px;border-radius:50%;background:var(--volt-deep)}
+.ph-head small{font-weight:400;font-size:9.5px;color:var(--slate)}
+.sv-ui-ge{position:relative}
+.sv-ui-ge .gv-stack{display:grid;gap:16px;align-content:space-between;min-height:340px}
+.sv-ui-ge.anim .gv-stack{transition:opacity .5s ease,scale .5s ease}
+.sv-ui-ge.anim.p3 .gv-stack{opacity:0;scale:.94}
+.sv-ui-ge.anim .gv-phone{position:absolute;inset:0;margin:0 auto;height:100%;width:min(240px,100%);opacity:0;scale:.92;transition:opacity .5s ease .3s,scale .5s ease .3s}
+.sv-ui-ge.anim.p3 .gv-phone{opacity:1;scale:1}
 .sv-ui-ge.anim .gv-src span{opacity:.25;transition:opacity .3s ease calc(var(--k)*.25s)}
 .sv-ui-ge.anim.p1 .gv-src span{opacity:1}
 .sv-ui-ge.anim .gv-hub{opacity:.25;scale:.92;transition:opacity .4s,scale .4s}
@@ -848,8 +869,8 @@ body.sm-open{overflow:hidden}
 .sv-ui-ge.anim .gv-row{opacity:0;translate:0 6px;transition:opacity .4s ease calc(.5s + var(--k)*.4s),translate .4s ease calc(.5s + var(--k)*.4s)}
 .sv-ui-ge.anim.p2 .gv-row{opacity:1;translate:0 0}
 .sv-ui-ge.anim .gv-chat p{opacity:0;translate:0 6px;transition:opacity .4s,translate .4s}
-.sv-ui-ge.anim.p3 .gv-chat p{opacity:1;translate:0 0}
-.sv-ui-ge.anim.p3 .gv-chat .a{transition-delay:1.2s}
+.sv-ui-ge.anim.p3 .gv-chat p{opacity:1;translate:0 0;transition-delay:calc(1s + var(--k)*1.5s)}
+.sv-ui-ge.anim.rs .gv-phone,.sv-ui-ge.anim.rs .gv-stack,.sv-ui-ge.anim.rs .gv-chat p{transition:none}
 .sv-k-br .sv-ui{margin-bottom:auto}
 @media(max-width:700px){.sv-ui-co .co-flow,.co-bot{grid-template-columns:1fr}.co-abc{width:auto}.co-abc::before,.co-abc::after{display:none}.gr-pipe{grid-template-columns:1fr 1fr;gap:12px}.gr-st:not(:last-child)::after{display:none}.gr-ms{grid-template-columns:1fr}}
 .cosa-card{max-width:960px}
@@ -967,8 +988,12 @@ body.sm-open{overflow:hidden}
 .sv-ui-bp.anim.on .bp-seq li{opacity:1;translate:0 0}
 .sv-ui-bp.anim .bp-roll b{opacity:.25;scale:.88;transition:opacity .4s ease calc(1.8s + var(--k)*.2s),scale .4s ease calc(1.8s + var(--k)*.2s)}
 .sv-ui-bp.anim.on .bp-roll b{opacity:1;scale:1}
-.sv-ui-bp.anim .bp-scen span{height:10%;transition:height .9s cubic-bezier(.3,1.2,.5,1) calc(3s + var(--k)*.3s)}
+.sv-ui-bp.anim .bp-scen span{height:10%;transition:height .9s cubic-bezier(.3,1.2,.5,1) calc(4.1s + var(--k)*.3s)}
 .sv-ui-bp.anim.on .bp-scen span{height:calc(var(--h)*100%)}
+.sv-ui-bp.anim .bp-act u{width:0;transition:width .8s ease calc(3s + var(--k)*.25s)}
+.sv-ui-bp.anim.on .bp-act u{width:calc(var(--m)*100%)}
+.sv-ui-bp.anim .bp-for span{opacity:.25;scale:.9;transition:opacity .4s ease calc(5.2s + var(--k)*.25s),scale .4s ease calc(5.2s + var(--k)*.25s)}
+.sv-ui-bp.anim.on .bp-for span{opacity:1;scale:1}
 .si-win{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:16px;overflow:hidden;box-shadow:0 8px 20px -14px rgba(0,0,0,.4)}
 .si-bar{display:flex;align-items:center;gap:5px;padding:8px 10px;background:var(--mist)}
 .si-bar i{width:8px;height:8px;border-radius:50%;background:var(--ash)}
@@ -1836,7 +1861,7 @@ html{scroll-snap-type:y proximity}
       <p class="sec-sub">Sette servizi che si attivano insieme o separatamente. Tocca un servizio per leggere cosa ricevi e come lo facciamo.</p>
     </header>
     <ul class="sv-grid reveal">
-<li class="sv-card glass sv-k-bp" style="--c:var(--volt)"><div class="sv-txt"><h3 class="sv-t"><button type="button" class="sv-open" data-sv="servizio-business-plan" aria-haspopup="dialog">Business planning</button></h3> <span class="sv-r">Lo strumento manageriale che guida l'azienda: direzione, organizzazione, modello e numeri in un unico piano, con la roadmap per eseguirlo e correggerlo.</span></div><ul class="sv-ck"><li>Strategia, organizzazione e rischi: dove vai e se hai i mezzi</li><li>Action plan di marketing, operations e finanza, rolling 1+4 anni</li><li>Tre scenari, ciascuno con il suo piano d'azione</li><li>Pronto da mostrare a banche, investitori e soci</li></ul><div class="sv-ui sv-ui-bp" aria-hidden="true"><ol class="bp-seq"><li style="--k:0"><i>1</i>Strategia</li><li style="--k:1"><i>2</i>Mercato</li><li style="--k:2"><i>3</i>Modello</li><li style="--k:3"><i>4</i>Numeri</li><li style="--k:4"><i>5</i>Action plan</li></ol><div class="bp-roll"><small>Rolling 1+4 anni, aggiornato ogni anno</small><div><b style="--k:0">Anno 1</b><b style="--k:1">Anno 2</b><b style="--k:2">Anno 3</b><b style="--k:3">Anno 4</b><b style="--k:4">Anno 5</b></div></div><div class="bp-scen"><span style="--h:.42;--k:0"><em>Prudente</em></span><span style="--h:.7;--k:1"><em>Intermedio</em></span><span style="--h:1;--k:2"><em>Ottimistico</em></span></div></div><span class="sv-fase"><span class="sr-only">Fase: </span>pianificazione</span></li>
+<li class="sv-card glass sv-k-bp" style="--c:var(--volt)"><div class="sv-txt"><h3 class="sv-t"><button type="button" class="sv-open" data-sv="servizio-business-plan" aria-haspopup="dialog">Business planning</button></h3> <span class="sv-r">Lo strumento manageriale che guida l'azienda: direzione, organizzazione, modello e numeri in un unico piano, con la roadmap per eseguirlo e correggerlo.</span></div><ul class="sv-ck"><li>Strategia, organizzazione e rischi: dove vai e se hai i mezzi</li><li>Action plan di marketing, operations e finanza, rolling 1+4 anni</li><li>Tre scenari, ciascuno con il suo piano d'azione</li><li>Pronto da mostrare a banche, investitori e soci</li></ul><div class="sv-ui sv-ui-bp" aria-hidden="true"><ol class="bp-seq"><li style="--k:0"><i>1</i>Strategia</li><li style="--k:1"><i>2</i>Mercato</li><li style="--k:2"><i>3</i>Modello</li><li style="--k:3"><i>4</i>Numeri</li><li style="--k:4"><i>5</i>Action plan</li></ol><div class="bp-roll"><small>Rolling 1+4 anni, aggiornato ogni anno</small><div><b style="--k:0">Anno 1</b><b style="--k:1">Anno 2</b><b style="--k:2">Anno 3</b><b style="--k:3">Anno 4</b><b style="--k:4">Anno 5</b></div></div><div class="bp-act"><small>Action plan per area</small><div style="--k:0"><b>Marketing</b><u style="--m:.8"></u></div><div style="--k:1"><b>Operations</b><u style="--m:.6"></u></div><div style="--k:2"><b>Finanza</b><u style="--m:.9"></u></div></div><div class="bp-scw"><small>Tre scenari, ognuno col suo piano</small><div class="bp-scen"><span style="--h:.42;--k:0"><em>Prudente</em></span><span style="--h:.7;--k:1"><em>Intermedio</em></span><span style="--h:1;--k:2"><em>Ottimistico</em></span></div></div><div class="bp-for"><small>Pronto per</small><span style="--k:0">Banche</span><span style="--k:1">Investitori</span><span style="--k:2">Soci</span></div></div><span class="sv-fase"><span class="sr-only">Fase: </span>pianificazione</span></li>
 <li class="sv-card glass sv-k-au" style="--c:var(--navy)"><div class="sv-txt"><h3 class="sv-t"><button type="button" class="sv-open" data-sv="servizio-automazioni" aria-haspopup="dialog">Automazioni agentiche</button></h3> <span class="sv-r">Agenti AI che leggono i tuoi dati, capiscono cosa non va, preparano l'azione e usano i tuoi strumenti. Con una persona che approva dove serve.</span></div><ul class="sv-ck"><li>Si parte dai processi, poi si automatizza</li><li>Customer care collegato a CRM e brain: sa quando mandare preventivo, fattura e upsell</li><li>Ticket di assistenza gestiti dall'agente, con una persona nei casi delicati</li><li>Cliente chiave che rallenta, margine che cala: l'agente se ne accorge e prepara l'azione</li></ul><div class="sv-ui sv-ui-au" aria-hidden="true"><svg class="n8n" viewBox="0 0 600 300" focusable="false">
 <g class="n8n-wires" fill="none" stroke="#8f8f8f" stroke-width="2"><g class="s1"><path class="w" d="M138 150H200"/></g><g class="s2"><path class="w" d="M264 192V232"/></g><g class="s3"><path class="w" d="M328 150C368 150 368 38 408 38"/><path class="w" d="M328 150C368 150 368 94 408 94"/><path class="w" d="M328 150C368 150 368 150 408 150"/><path class="w" d="M328 150C368 150 368 206 408 206"/><path class="w" d="M328 150C368 150 368 262 408 262"/></g></g>
 <g class="n8n-n"><g class="s1"><rect x="10" y="118" width="128" height="64" rx="12"/><rect x="10" y="118" width="8" height="64" rx="4" class="bar"/><text x="28" y="140" class="k">TRIGGER · CRM</text><text x="28" y="158" class="t">Cliente cambia</text><text x="28" y="174" class="t">stato in pipeline</text></g>
@@ -1845,11 +1870,12 @@ html{scroll-snap-type:y proximity}
 <g class="s3" style="--k:0"><rect x="408" y="15" width="182" height="46" rx="12"/><text x="422" y="33" class="k">SE TRATTATIVA</text><text x="422" y="50" class="t">Invia il preventivo</text></g><g class="s3" style="--k:1"><rect x="408" y="71" width="182" height="46" rx="12"/><text x="422" y="89" class="k">SE VINTO</text><text x="422" y="106" class="t">Emette la fattura</text></g><g class="s3" style="--k:2"><rect x="408" y="127" width="182" height="46" rx="12"/><text x="422" y="145" class="k">SE CLIENTE SODDISFATTO</text><text x="422" y="162" class="t">Propone l'upsell</text></g><g class="s3" style="--k:3"><rect x="408" y="183" width="182" height="46" rx="12"/><text x="422" y="201" class="k">SE RICHIESTA ASSISTENZA</text><text x="422" y="218" class="t">Gestisce il ticket</text></g><g class="s3" style="--k:4"><rect x="408" y="239" width="182" height="46" rx="12" class="hu"/><text x="422" y="257" class="k">SE CASO DELICATO</text><text x="422" y="274" class="t">Passa a una persona</text></g></g>
 <g fill="#fff" stroke="#8f8f8f" stroke-width="2"><circle cx="138" cy="150" r="4"/><circle cx="200" cy="150" r="4"/><circle cx="328" cy="150" r="4"/><circle cx="264" cy="192" r="4"/><circle cx="264" cy="232" r="4"/><circle cx="408" cy="38" r="4"/><circle cx="408" cy="94" r="4"/><circle cx="408" cy="150" r="4"/><circle cx="408" cy="206" r="4"/><circle cx="408" cy="262" r="4"/></g></svg></div><span class="sv-fase"><span class="sr-only">Fase: </span>esecuzione</span></li>
 <li class="sv-card glass sv-k-br" style="--c:var(--navy)"><div class="sv-txt"><h3 class="sv-t"><button type="button" class="sv-open" data-sv="servizio-company-brain" aria-haspopup="dialog">Company brain e AI operating system</button></h3> <span class="sv-r">Un cervello AI che conosce già tutta la tua azienda: documenti, procedure, clienti, decisioni. Gli chiedi in chat, senza spiegargli nulla.</span></div><ul class="sv-ck"><li>Documenti, procedure e storia dei clienti</li><li>AI potenziata sul tuo contesto: sa già come lavori</li><li>Onboarding rapido, sapere tramandato, team che collabora</li></ul><div class="sv-ui sv-ui-br" aria-hidden="true"><div class="br-scene"><span class="br-d" style="--x:-36;--y:-42;--i:0">Documenti</span><span class="br-d" style="--x:0;--y:-42;--i:1">Contesto competitivo</span><span class="br-d" style="--x:36;--y:-42;--i:2">Procedure</span><span class="br-d" style="--x:-38;--y:-18;--i:3">Clienti</span><span class="br-d" style="--x:38;--y:-18;--i:4">Preventivi</span><span class="br-d" style="--x:-38;--y:18;--i:5">Decisioni</span><span class="br-d" style="--x:38;--y:18;--i:6">Listini</span><span class="br-d" style="--x:-36;--y:42;--i:7">Organigramma</span><span class="br-d" style="--x:0;--y:42;--i:8">Brand identity</span><span class="br-d" style="--x:36;--y:42;--i:9">Contratti</span><span class="br-c"><b>Brain</b><small>cervello AI aziendale</small></span><div class="br-chat"><p style="--k:0">Buongiorno! Tre cose da sapere oggi:</p><p style="--k:1">Il cliente Rossi ti deve ancora <b>700 €</b>. Preparo il sollecito?</p><p style="--k:2">Il listino di un tuo fornitore è salito del <b>30%</b> negli ultimi 30 giorni.</p><p style="--k:3">I fornitori ti stanno facendo prezzi <b>progressivamente migliori</b>. Buon momento per rinegoziare.</p></div></div></div><span class="sv-fase"><span class="sr-only">Fase: </span>esecuzione</span></li>
-<li class="sv-card glass sv-k-ge" style="--c:var(--navy)"><div class="sv-txt"><h3 class="sv-t"><button type="button" class="sv-open" data-sv="servizio-gestionali" aria-haspopup="dialog">Gestionali automatizzati</button></h3> <span class="sv-r">Software su misura, costruito intorno ai tuoi processi, collegato a ciò che usi già e aggiornato da solo dalle tue fonti.</span></div><ul class="sv-ck"><li>Magazzino, ordini, preventivi e CRM</li><li>Un raccoglitore dati automatizzato porta in un unico posto commercialista, CRM, mail, riunioni, chiamate e messaggi</li><li>Un agente AI conosce tutto ciò che c'è dentro e puoi interrogarlo</li><li>Bot vocale per aggiornare a voce, in un attimo</li></ul><div class="sv-ui sv-ui-ge" aria-hidden="true"><div class="gv">
+<li class="sv-card glass sv-k-ge" style="--c:var(--navy)"><div class="sv-txt"><h3 class="sv-t"><button type="button" class="sv-open" data-sv="servizio-gestionali" aria-haspopup="dialog">Gestionali automatizzati</button></h3> <span class="sv-r">Software su misura, costruito intorno ai tuoi processi, collegato a ciò che usi già e aggiornato da solo dalle tue fonti.</span></div><ul class="sv-ck"><li>Magazzino, ordini, preventivi e CRM</li><li>Un raccoglitore dati automatizzato porta in un unico posto commercialista, CRM, mail, riunioni, chiamate e messaggi</li><li>Un agente AI conosce tutto ciò che c'è dentro e puoi interrogarlo</li><li>Bot vocale per aggiornare a voce, in un attimo</li></ul><div class="sv-ui sv-ui-ge" aria-hidden="true"><div class="gv"><div class="gv-stack">
 <div class="gv-src"><span style="--k:0">Commercialista</span><span style="--k:1">CRM</span><span style="--k:2">Mail</span><span style="--k:3">Riunioni</span><span style="--k:4">Chiamate</span><span style="--k:5">Messaggi</span><span class="vo" style="--k:6">Bot vocale: input a voce</span></div>
 <div class="gv-hub">Raccoglitore dati automatizzato</div>
 <div class="gv-gest"><small>Gestionale: un unico posto</small><div class="gv-row" style="--k:0"><span>Ordine Bianchi</span><b>Consegna giovedì</b></div><div class="gv-row" style="--k:1"><span>Cliente Rossi</span><b>Fattura da emettere</b></div><div class="gv-row" style="--k:2"><span>Visita Verdi</span><b>Preventivo richiesto</b></div></div>
-<div class="gv-chat"><p class="u">A che punto è l'ordine Bianchi?</p><p class="a">Confermato ieri in riunione: consegna giovedì. Fattura da emettere.</p></div></div></div><span class="sv-fase"><span class="sr-only">Fase: </span>esecuzione</span></li>
+</div>
+<div class="gv-phone"><i class="ph-notch"></i><div class="ph-head"><span></span>Assistente 3-LAB<small>allenato sui tuoi dati</small></div><div class="gv-chat"><p class="u" style="--k:0">A che punto è l'ordine Bianchi?</p><p class="a" style="--k:1">Confermato ieri in riunione: consegna giovedì. Fattura da emettere.</p><p class="u" style="--k:2">Quanto mi deve Rossi?</p><p class="a" style="--k:3"><b>700 €</b>, fattura scaduta da 12 giorni. Preparo il sollecito?</p></div></div></div></div><span class="sv-fase"><span class="sr-only">Fase: </span>esecuzione</span></li>
 <li class="sv-card glass sv-k-si" style="--c:var(--navy)"><div class="sv-txt"><h3 class="sv-t"><button type="button" class="sv-open" data-sv="servizio-sito" aria-haspopup="dialog">Sito web</button></h3> <span class="sv-r">Prima di essere bello, un sito deve essere uno strumento della tua strategia: porta lead, fa prenotare appuntamenti e rafforza credibilità e brand.</span></div><ul class="sv-ck"><li>Scopo e indicatori definiti: lead, appuntamenti, credibilità</li><li>Brand identity coerente su ogni pagina</li><li>Integrato con CRM e strumenti: ogni contatto entra già classificato</li><li>Si aggiorna con un messaggio</li></ul><div class="sv-ui sv-ui-si" aria-hidden="true"><div class="si-win"><div class="si-bar"><i></i><i></i><i></i><span></span></div><div class="si-hero"><b></b><em></em></div><div class="si-grid"><span></span><span></span><span></span></div></div></div><span class="sv-fase"><span class="sr-only">Fase: </span>esecuzione</span></li>
 <li class="sv-card glass sv-k-gr" style="--c:var(--navy)"><div class="sv-txt"><h3 class="sv-t"><button type="button" class="sv-open" data-sv="servizio-growth" aria-haspopup="dialog">Business development e growth</button></h3> <span class="sv-r">Un sistema ripetibile per trovare, gestire e far crescere i clienti, invece di affidarti al passaparola.</span></div><ul class="sv-ck"><li>Rete commerciale e clienti chiave</li><li>Processo di vendita passo per passo</li><li>Outreach strutturato via e-mail, call e social</li><li>Indicatori di campagna per correggere il tiro</li></ul><div class="sv-ui sv-ui-gr" aria-hidden="true"><div class="gr-pipe">
 <div class="gr-st" style="--k:0"><i>1</i><b>Segmentazione e targeting</b><span>Settore · dimensione · zona</span><em><u style="--m:1"></u></em></div>
@@ -2705,11 +2731,11 @@ document.querySelectorAll('.faq-q').forEach(function(b){
       }})();},{threshold:.4});
     io.observe(el);
   }
-  avvia('.sv-ui-bp',[[400,'on']],8000);
+  avvia('.sv-ui-bp',[[400,'on']],9000);
   avvia('.br-scene',[[700,'in'],[4700,'full'],[1500,'chat']],9500);
   avvia('.sv-ui-co',[[500,'p1'],[1800,'p2'],[1800,'p3'],[1800,'p4']],5000);
   avvia('.sv-ui-gr',[[500,'p1'],[1300,'p2'],[1300,'p3'],[1300,'p4'],[1500,'p5']],5500);
-  avvia('.sv-ui-ge',[[500,'p1'],[2500,'p2'],[2200,'p3']],6000);
+  avvia('.sv-ui-ge',[[500,'p1'],[2500,'p2'],[2600,'p3']],8000);
   avvia('.sv-ui-au',[[500,'p1'],[1100,'p2'],[1100,'p3']],6500);
   avvia('.ai-stage',[[600,'p1'],[3000,'p2']],5500);
   const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('go');io2.unobserve(e.target);}}),{threshold:.45});
